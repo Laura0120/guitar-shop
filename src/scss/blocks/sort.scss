@@ -1,0 +1,33 @@
+.sort {
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sort h2 {
+  margin: 0;
+  @include font(16px, 20px, 400);
+}
+
+.sort label {
+  @include font(16px, 20px, 400, rgba(88, 87, 87, 1));
+}
+
+.sort__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sort__checkbox + label {
+  cursor: pointer;
+}
+
+.sort__checkbox--type:checked + label {
+  color: $font-color;
+}
+
+.sort__checkbox--direction:checked + label svg path {
+  fill: black;
+}

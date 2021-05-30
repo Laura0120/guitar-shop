@@ -1,0 +1,53 @@
+.card-product {
+  width: 220px;
+  height: 304px;
+  border: 1px solid rgba(221, 218, 218, 1);
+  padding: 16px 14px 20px;
+  margin-bottom: 30px;
+  &:not(:nth-child(3n)) {
+    margin-right: 20px;
+  }
+}
+
+.card-product__image {
+  width: 68px;
+  height: 190px;
+  margin: 0 auto;
+}
+
+.card-product__rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.card-product__star {
+  height: 12px;
+  width: 12px;
+  &:not(:last-child) {
+    background: url(../../img/icon-star.svg) no-repeat center;
+  }
+  &:last-child {
+    background: url(../../img/icon-star-half.svg) no-repeat center;
+  }
+}
+
+.card-product__popularity {
+  @include font(10px, $color: rgba(159, 158, 158, 1));
+}
+
+.card-product__data-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(&--buttons) {
+    margin-bottom: 16px;
+  }
+}
+.card-product__button--buy {
+  padding-left: 28px;
+  background-image: url(../../img/cart.svg);
+  background-repeat: no-repeat;
+  background-position: 11px center;
+}

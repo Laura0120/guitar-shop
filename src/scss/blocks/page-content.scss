@@ -1,0 +1,66 @@
+.page-content {
+  background-image: linear-gradient(
+      180deg,
+      white 0 24px,
+      rgba(63, 63, 63, 1) 24px 28px,
+      white 28px 38px,
+      rgba(63, 63, 63, 1) 38px 42px,
+      white 42px 52px,
+      rgba(63, 63, 63, 1) 52px 56px,
+      white 56px 66px,
+      rgba(63, 63, 63, 1) 66px 70px,
+      white 70px 80px,
+      rgba(63, 63, 63, 1) 80px 84px,
+      white 84px 94px,
+      rgba(63, 63, 63, 1) 94px 98px
+    ),
+    linear-gradient(to top, white 0 10px, rgba(63, 63, 63, 1) 10px 16px);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 98px, 100% 16px;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 72px;
+    right: 0px;
+    z-index: 1;
+    min-width: 100%;
+    height: 298px;
+    background-image: url(../../img/guitar-background-picture.png);
+    background-repeat: no-repeat;
+    background-size: 825px;
+    background-position: right;
+  }
+}
+
+.page-content__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: $descktop-width;
+  margin: 0 auto;
+  padding: 213px $descktop-padding 139px;
+}
+
+.page-content__wrapper h1 {
+  @include font(22px, 26px, 700);
+  margin: 0;
+}
+
+.page-content__bread-crumbs {
+  width: 100%;
+}
+.page-content__catalog,
+.page-content__sort {
+  width: 700px;
+}
+
+.page-content__filter {
+  width: 208px;
+  // margin-right: 12px;
+}
+
+.page-content__cart {
+  width: 100%;
+}

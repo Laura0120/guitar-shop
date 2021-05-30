@@ -1,0 +1,19 @@
+.navigation {
+  margin-right: 36px;
+}
+
+.navigation__list {
+  @include list-reset();
+  display: flex;
+}
+.navigation__item {
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
+  line-height: 20px;
+}
+
+.navigation__item a {
+  text-decoration: none;
+  @include font($line-height: 20px);
+}

@@ -1,0 +1,17 @@
+.bread-crumbs {
+  @include list-reset();
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 49px;
+}
+
+.bread-crumbs__item {
+  &:not(:nth-child(1)) {
+    padding-left: 33px;
+  }
+}
+
+.bread-crumbs__link {
+  text-decoration: none;
+  @include font(16px, 19px);
+}

@@ -1,0 +1,30 @@
+.button {
+  display: block;
+  @include font(12px, 15px, 700, white);
+  text-decoration: none;
+  border-radius: 2px;
+  border: none;
+  padding: 4px 9px;
+  cursor: pointer;
+  &--gray {
+    background-color: rgba(193, 193, 193, 1);
+  }
+
+  &--orange {
+    background-color: rgba(226, 127, 0, 1);
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: rgba(88, 87, 87, 1);
+    border: 1px solid rgba(88, 87, 87, 1);
+  }
+
+  &--close {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+
+    background: transparent url(../../img/button-close-icon.svg) no-repeat center;
+  }
+}

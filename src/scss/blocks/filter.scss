@@ -1,0 +1,72 @@
+.filter h2,
+.filter h3 {
+  margin: 0;
+  @include font(18px, 21px, 700);
+}
+.filter h2 {
+  margin-bottom: 30px;
+}
+
+.filter h3 {
+  margin-bottom: 24px;
+}
+
+.filter__fieldset {
+  border: none;
+  border-top: 0.7px solid rgba(221, 218, 218, 1);
+  padding: 29px 0;
+  margin: 0;
+}
+
+.filter__fieldset--price h3 {
+  @include font(15px, 18px, 700);
+}
+.filter__price-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.filter__input-price {
+  @include font(14px, 10px);
+  text-align: center;
+  width: 84px;
+  height: 28px;
+  border: 0.7px solid rgba(159, 158, 158, 1);
+  border-radius: 2px;
+}
+
+.filter__checkbox-wrapper {
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.filter__checkbox + label {
+  position: relative;
+  display: block;
+  padding: 1.5px 0 1.5px 40px;
+  cursor: pointer;
+  @include font(14px, 19px);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border: 0.7px solid rgba(159, 158, 158, 1);
+    border-radius: 2px;
+  }
+}
+.filter__checkbox:checked + label {
+  &::before {
+    background: url(../../img/check-mark.svg) no-repeat center;
+  }
+}
+.filter__checkbox:disabled + label {
+  color: rgba(221, 221, 221, 1);
+  &::before {
+    background-color: rgba(246, 243, 243, 1);
+    border-color: rgba(246, 243, 243, 1);
+  }
+}

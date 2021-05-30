@@ -1,0 +1,5 @@
+.catalog__list {
+  display: flex;
+  flex-wrap: wrap;
+  @include list-reset();
+}

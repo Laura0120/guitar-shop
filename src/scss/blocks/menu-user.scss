@@ -1,0 +1,45 @@
+.menu-user {
+  display: flex;
+}
+
+.menu-user__item {
+  height: 40px;
+  text-align: center;
+
+  &--location {
+    width: 40px;
+    padding-top: 12px;
+  }
+
+  &--search {
+    width: 60px;
+    padding-top: 13px;
+  }
+  &--cart {
+    width: 44px;
+    padding: 10px 0 0 10px;
+    text-align: start;
+    & span {
+      display: inline-block;
+      vertical-align: top;
+      @include font(10px, 12px, $color: rgba(242, 5, 5, 1));
+    }
+  }
+}
+.menu-user__item-icon {
+  &--location {
+    width: 15px;
+    height: 17px;
+  }
+  &--search {
+    width: 14px;
+    height: 14px;
+  }
+  &--cart {
+    width: 16px;
+    height: 18px;
+  }
+}
+.menu-user__item--cart span {
+  padding-left: 2px;
+}
