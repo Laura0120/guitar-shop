@@ -2,16 +2,20 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { ActionCreator } from "../store/action";
-import { RATING_STAR_COUNT } from "../const";
+import { RATING_STAR_COUNT, GUITARS_DATA } from "../const";
 import { addSpacesAfterThreeCharacters } from "../utils";
 
 const CardProduct = (props) => {
   const { productItem, setOpenProduct, togglePopupAddCartState } = props;
-  const { name, popularity, price, img } = productItem;
+  const { name, popularity, price, img, type } = productItem;
 
   return (
     <React.Fragment>
-      <div className="card-product__image">
+      <div
+        className={`card-product__image ${
+          type === GUITARS_DATA[1].type ? `card-product__image--electro` : ``
+        }`}
+      >
         <picture>
           <source type="image/webp" set={`img/${img}.webp`} />
           <img src={`img/${img}.jpg`} width="68" height="190" alt={name} />

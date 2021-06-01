@@ -3,7 +3,7 @@ export const AppRoute = {
   CART: { url: "/cart", name: "Оформляем" },
 };
 export const PROMO_CODE = ["GITARAHIT", "SUPERGITARA", "GITARA2020"];
-export const COUNT_CARDS_ON_PAGES = 9; 
+export const COUNT_CARDS_ON_PAGES = 9;
 export const QUANTITY_STRINGS_OPTIONS = [4, 6, 7, 12];
 export const RATING_STAR_COUNT = [1, 2, 3, 4, 5];
 
@@ -32,7 +32,7 @@ export const CATALOG = [
   {
     vendorCode: "SO757575",
     name: "Честер Bass",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
     popularity: 15,
     countStrings: 7,
     price: 17500,
@@ -42,7 +42,8 @@ export const CATALOG = [
   {
     vendorCode: "TK129049",
     name: "СURT Z300",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 9,
     countStrings: 7,
     price: 29500,
@@ -52,7 +53,8 @@ export const CATALOG = [
   {
     vendorCode: "RO111111",
     name: "Roman LX",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 21,
     countStrings: 4,
     price: 6800,
@@ -62,7 +64,8 @@ export const CATALOG = [
   {
     vendorCode: "TK436457",
     name: "	СURT T300",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 15,
     countStrings: 6,
     price: 30000,
@@ -72,7 +75,8 @@ export const CATALOG = [
   {
     vendorCode: "DI192138",
     name: "Dania Super",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 5,
     countStrings: 7,
     price: 3500,
@@ -82,7 +86,8 @@ export const CATALOG = [
   {
     vendorCode: "SO934345",
     name: "Честер WX",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 17,
     countStrings: 6,
     price: 15300,
@@ -92,7 +97,8 @@ export const CATALOG = [
   {
     vendorCode: "DI082347",
     name: "Dania VX",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 5,
     countStrings: 4,
     price: 2200,
@@ -102,7 +108,8 @@ export const CATALOG = [
   {
     vendorCode: "SO135646",
     name: "Честер Plus",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 27,
     countStrings: 4,
     price: 30000,
@@ -112,7 +119,8 @@ export const CATALOG = [
   {
     vendorCode: "VO154751",
     name: "Виолана 300",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 3,
     countStrings: 7,
     price: 1700,
@@ -122,7 +130,8 @@ export const CATALOG = [
   {
     vendorCode: "TK244556",
     name: "СURT Clasic",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 20,
     countStrings: 4,
     price: 23000,
@@ -132,7 +141,8 @@ export const CATALOG = [
   {
     vendorCode: "TK134663",
     name: "СURT Z250",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 19,
     countStrings: 4,
     price: 18700,
@@ -142,7 +152,8 @@ export const CATALOG = [
   {
     vendorCode: "SO123212",
     name: "Честер 7X",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 30,
     countStrings: 7,
     price: 35000,
@@ -152,7 +163,8 @@ export const CATALOG = [
   {
     vendorCode: "SO123234",
     name: "Честер 6V",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 28,
     countStrings: 6,
     price: 14900,
@@ -162,7 +174,8 @@ export const CATALOG = [
   {
     vendorCode: "VO519510",
     name: "Виолана Mix",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 7,
     countStrings: 6,
     price: 7600,
@@ -172,7 +185,8 @@ export const CATALOG = [
   {
     vendorCode: "VO457369",
     name: "Виолана 250x",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 19,
     countStrings: 6,
     price: 6500,
@@ -182,7 +196,8 @@ export const CATALOG = [
   {
     vendorCode: "FB625903",
     name: "Фабио Лайт",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 26,
     countStrings: 7,
     price: 12000,
@@ -192,7 +207,8 @@ export const CATALOG = [
   {
     vendorCode: "FB576948",
     name: "Фабио L100",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 31,
     countStrings: 7,
     price: 9900,
@@ -202,7 +218,8 @@ export const CATALOG = [
   {
     vendorCode: "LU012032",
     name: "Liana Z200",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 28,
     countStrings: 12,
     price: 8900,
@@ -212,7 +229,8 @@ export const CATALOG = [
   {
     vendorCode: "LU546853",
     name: "Liana Z100",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 34,
     countStrings: 12,
     price: 10500,
@@ -222,7 +240,8 @@ export const CATALOG = [
   {
     vendorCode: "LU458283",
     name: "Liana Z300",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 9,
     countStrings: 6,
     price: 13300,
@@ -232,7 +251,8 @@ export const CATALOG = [
   {
     vendorCode: "RO324341",
     name: "Roman RX",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 37,
     countStrings: 4,
     price: 4800,
@@ -242,7 +262,8 @@ export const CATALOG = [
   {
     vendorCode: "RO214235",
     name: "Roman TX",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 5,
     countStrings: 4,
     price: 1900,
@@ -252,7 +273,8 @@ export const CATALOG = [
   {
     vendorCode: "DI132414",
     name: "Dania U100",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 23,
     countStrings: 4,
     price: 25000,
@@ -262,7 +284,8 @@ export const CATALOG = [
   {
     vendorCode: "DI934754",
     name: "Dania WR",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 3,
     countStrings: 4,
     price: 3800,
@@ -272,7 +295,8 @@ export const CATALOG = [
   {
     vendorCode: "DI034292",
     name: "Dania LE",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 10,
     countStrings: 4,
     price: 4100,
@@ -282,7 +306,8 @@ export const CATALOG = [
   {
     vendorCode: "MI193214",
     name: "Mirana V10",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 14,
     countStrings: 4,
     price: 2700,
@@ -292,7 +317,8 @@ export const CATALOG = [
   {
     vendorCode: "VO043244",
     name: "Виолана Mini",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 29,
     countStrings: 4,
     price: 6700,
@@ -302,7 +328,8 @@ export const CATALOG = [
   {
     vendorCode: "SO757575",
     name: "Честер Bass",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 15,
     countStrings: 7,
     price: 17500,
@@ -312,7 +339,8 @@ export const CATALOG = [
   {
     vendorCode: "TK129049",
     name: "СURT Z300",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 9,
     countStrings: 7,
     price: 29500,
@@ -322,7 +350,8 @@ export const CATALOG = [
   {
     vendorCode: "RO111111",
     name: "Roman LX",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 21,
     countStrings: 4,
     price: 6800,
@@ -332,7 +361,8 @@ export const CATALOG = [
   {
     vendorCode: "TK436457",
     name: "	СURT T300",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 15,
     countStrings: 6,
     price: 30000,
@@ -342,7 +372,8 @@ export const CATALOG = [
   {
     vendorCode: "DI192138",
     name: "Dania Super",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 5,
     countStrings: 7,
     price: 3500,
@@ -352,7 +383,8 @@ export const CATALOG = [
   {
     vendorCode: "SO934345",
     name: "Честер WX",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 17,
     countStrings: 6,
     price: 15300,
@@ -362,7 +394,8 @@ export const CATALOG = [
   {
     vendorCode: "DI082347",
     name: "Dania VX",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 5,
     countStrings: 4,
     price: 2200,
@@ -372,7 +405,8 @@ export const CATALOG = [
   {
     vendorCode: "SO135646",
     name: "Честер Plus",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 27,
     countStrings: 4,
     price: 30000,
@@ -382,7 +416,8 @@ export const CATALOG = [
   {
     vendorCode: "VO154751",
     name: "Виолана 300",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 3,
     countStrings: 7,
     price: 1700,
@@ -392,7 +427,8 @@ export const CATALOG = [
   {
     vendorCode: "TK244556",
     name: "СURT Clasic",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 20,
     countStrings: 4,
     price: 23000,
@@ -402,7 +438,8 @@ export const CATALOG = [
   {
     vendorCode: "TK134663",
     name: "СURT Z250",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 19,
     countStrings: 4,
     price: 18700,
@@ -412,7 +449,8 @@ export const CATALOG = [
   {
     vendorCode: "SO123212",
     name: "Честер 7X",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 30,
     countStrings: 7,
     price: 35000,
@@ -422,7 +460,8 @@ export const CATALOG = [
   {
     vendorCode: "SO123234",
     name: "Честер 6V",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 28,
     countStrings: 6,
     price: 14900,
@@ -432,7 +471,8 @@ export const CATALOG = [
   {
     vendorCode: "VO519510",
     name: "Виолана Mix",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 7,
     countStrings: 6,
     price: 7600,
@@ -442,7 +482,8 @@ export const CATALOG = [
   {
     vendorCode: "VO457369",
     name: "Виолана 250x",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 19,
     countStrings: 6,
     price: 6500,
@@ -452,7 +493,8 @@ export const CATALOG = [
   {
     vendorCode: "FB625903",
     name: "Фабио Лайт",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 26,
     countStrings: 7,
     price: 12000,
@@ -462,7 +504,8 @@ export const CATALOG = [
   {
     vendorCode: "FB576948",
     name: "Фабио L100",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 31,
     countStrings: 7,
     price: 9900,
@@ -472,7 +515,8 @@ export const CATALOG = [
   {
     vendorCode: "LU012032",
     name: "Liana Z200",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 28,
     countStrings: 12,
     price: 8900,
@@ -482,7 +526,8 @@ export const CATALOG = [
   {
     vendorCode: "LU546853",
     name: "Liana Z100",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 34,
     countStrings: 12,
     price: 10500,
@@ -492,7 +537,8 @@ export const CATALOG = [
   {
     vendorCode: "LU458283",
     name: "Liana Z300",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 9,
     countStrings: 6,
     price: 13300,
@@ -502,7 +548,8 @@ export const CATALOG = [
   {
     vendorCode: "RO324341",
     name: "Roman RX",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 37,
     countStrings: 4,
     price: 4800,
@@ -512,7 +559,8 @@ export const CATALOG = [
   {
     vendorCode: "RO214235",
     name: "Roman TX",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 5,
     countStrings: 4,
     price: 1900,
@@ -522,7 +570,8 @@ export const CATALOG = [
   {
     vendorCode: "DI132414",
     name: "Dania U100",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 23,
     countStrings: 4,
     price: 25000,
@@ -532,7 +581,8 @@ export const CATALOG = [
   {
     vendorCode: "DI934754",
     name: "Dania WR",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 3,
     countStrings: 4,
     price: 3800,
@@ -542,7 +592,8 @@ export const CATALOG = [
   {
     vendorCode: "DI034292",
     name: "Dania LE",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 10,
     countStrings: 4,
     price: 4100,
@@ -552,7 +603,8 @@ export const CATALOG = [
   {
     vendorCode: "MI193214",
     name: "Mirana V10",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 14,
     countStrings: 4,
     price: 2700,
@@ -562,7 +614,8 @@ export const CATALOG = [
   {
     vendorCode: "VO043244",
     name: "Виолана Mini",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 29,
     countStrings: 4,
     price: 6700,
@@ -572,7 +625,8 @@ export const CATALOG = [
   {
     vendorCode: "SO757575",
     name: "Честер Bass",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 15,
     countStrings: 7,
     price: 17500,
@@ -582,7 +636,8 @@ export const CATALOG = [
   {
     vendorCode: "TK129049",
     name: "СURT Z300",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 9,
     countStrings: 7,
     price: 29500,
@@ -592,7 +647,8 @@ export const CATALOG = [
   {
     vendorCode: "RO111111",
     name: "Roman LX",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 21,
     countStrings: 4,
     price: 6800,
@@ -602,7 +658,8 @@ export const CATALOG = [
   {
     vendorCode: "TK436457",
     name: "	СURT T300",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 15,
     countStrings: 6,
     price: 30000,
@@ -612,7 +669,8 @@ export const CATALOG = [
   {
     vendorCode: "DI192138",
     name: "Dania Super",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 5,
     countStrings: 7,
     price: 3500,
@@ -622,7 +680,8 @@ export const CATALOG = [
   {
     vendorCode: "SO934345",
     name: "Честер WX",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 17,
     countStrings: 6,
     price: 15300,
@@ -632,7 +691,8 @@ export const CATALOG = [
   {
     vendorCode: "DI082347",
     name: "Dania VX",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 5,
     countStrings: 4,
     price: 2200,
@@ -642,7 +702,8 @@ export const CATALOG = [
   {
     vendorCode: "SO135646",
     name: "Честер Plus",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 27,
     countStrings: 4,
     price: 30000,
@@ -652,7 +713,8 @@ export const CATALOG = [
   {
     vendorCode: "VO154751",
     name: "Виолана 300",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 3,
     countStrings: 7,
     price: 1700,
@@ -662,7 +724,8 @@ export const CATALOG = [
   {
     vendorCode: "TK244556",
     name: "СURT Clasic",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 20,
     countStrings: 4,
     price: 23000,
@@ -672,7 +735,8 @@ export const CATALOG = [
   {
     vendorCode: "TK134663",
     name: "СURT Z250",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 19,
     countStrings: 4,
     price: 18700,
@@ -682,7 +746,8 @@ export const CATALOG = [
   {
     vendorCode: "SO123212",
     name: "Честер 7X",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 30,
     countStrings: 7,
     price: 35000,
@@ -692,7 +757,8 @@ export const CATALOG = [
   {
     vendorCode: "SO123234",
     name: "Честер 6V",
-    type: GUITARS_DATA[1].nameType,
+    type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 28,
     countStrings: 6,
     price: 14900,
@@ -702,7 +768,8 @@ export const CATALOG = [
   {
     vendorCode: "VO519510",
     name: "Виолана Mix",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 7,
     countStrings: 6,
     price: 7600,
@@ -712,7 +779,8 @@ export const CATALOG = [
   {
     vendorCode: "VO457369",
     name: "Виолана 250x",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 19,
     countStrings: 6,
     price: 6500,
@@ -722,7 +790,8 @@ export const CATALOG = [
   {
     vendorCode: "FB625903",
     name: "Фабио Лайт",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 26,
     countStrings: 7,
     price: 12000,
@@ -732,7 +801,8 @@ export const CATALOG = [
   {
     vendorCode: "FB576948",
     name: "Фабио L100",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 31,
     countStrings: 7,
     price: 9900,
@@ -742,7 +812,8 @@ export const CATALOG = [
   {
     vendorCode: "LU012032",
     name: "Liana Z200",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 28,
     countStrings: 12,
     price: 8900,
@@ -752,7 +823,8 @@ export const CATALOG = [
   {
     vendorCode: "LU546853",
     name: "Liana Z100",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 34,
     countStrings: 12,
     price: 10500,
@@ -762,7 +834,8 @@ export const CATALOG = [
   {
     vendorCode: "LU458283",
     name: "Liana Z300",
-    type: GUITARS_DATA[0].nameType,
+    type: GUITARS_DATA[0].type,
+    nameType: GUITARS_DATA[0].nameType,
     popularity: 9,
     countStrings: 6,
     price: 13300,
@@ -772,7 +845,8 @@ export const CATALOG = [
   {
     vendorCode: "RO324341",
     name: "Roman RX",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 37,
     countStrings: 4,
     price: 4800,
@@ -782,7 +856,8 @@ export const CATALOG = [
   {
     vendorCode: "RO214235",
     name: "Roman TX",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 5,
     countStrings: 4,
     price: 1900,
@@ -792,7 +867,8 @@ export const CATALOG = [
   {
     vendorCode: "DI132414",
     name: "Dania U100",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 23,
     countStrings: 4,
     price: 25000,
@@ -802,7 +878,8 @@ export const CATALOG = [
   {
     vendorCode: "DI934754",
     name: "Dania WR",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 3,
     countStrings: 4,
     price: 3800,
@@ -812,12 +889,12 @@ export const CATALOG = [
   {
     vendorCode: "DI034292",
     name: "Dania LE",
-    type: GUITARS_DATA[2].nameType,
+    type: GUITARS_DATA[2].type,
+    nameType: GUITARS_DATA[2].nameType,
     popularity: 10,
     countStrings: 4,
     price: 4100,
     img: "ukulele",
     imgMin: "ukulele-min",
   },
- 
 ];

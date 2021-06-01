@@ -1,3 +1,7 @@
+.cart {
+  padding-bottom: 33px;
+}
+
 .cart__list {
   @include list-reset();
 }

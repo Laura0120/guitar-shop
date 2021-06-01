@@ -5,6 +5,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { Provider } from "react-redux";
 
 import { redirect } from "./js/store/redirect";
+
 import combineReducers from "./js/store/reducers/root-reducer";
 import App from "./js/components/app";
 

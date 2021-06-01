@@ -12,7 +12,15 @@ const Filters = (props) => {
     quantityStringsChecked,
     changeTypesChecked,
     changeQuantityStringsChecked,
+    filtersState,
+    sortState,
+    getProducts,
   } = props;
+
+  React.useEffect(() => {
+    getProducts({ filtersState, sortState });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filtersState, sortState]);
 
   return (
     <form className="page-content__filter filter">
@@ -64,6 +72,8 @@ const Filters = (props) => {
 const mapStateToProps = (state) => ({
   typesChecked: state.FILTER_STATE.typesChecked,
   quantityStringsChecked: state.FILTER_STATE.quantityStringsChecked,
+  filtersState: state.FILTER_STATE,
+  sortState: state.SORT_STATE,
 });
 const mapDispatchToProps = (dispatch) => ({
   changeTypesChecked(value) {
@@ -71,6 +81,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   changeQuantityStringsChecked(value) {
     dispatch(ActionCreator.changeQuantityStringsChecked(value));
+  },
+  getProducts(value) {
+    dispatch(ActionCreator.getProducts(value));
   },
 });
 

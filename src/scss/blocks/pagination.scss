@@ -1,6 +1,7 @@
 .pagination {
   display: flex;
   justify-content: flex-end;
+  padding-top: 29px;
 }
 
 .pagination__wrapper {
@@ -42,6 +43,6 @@
 }
 
 .pagination__button {
-  padding: 2px 20px;
+  padding: 1px 25px 1px 19px;
   background-color: transparent;
 }

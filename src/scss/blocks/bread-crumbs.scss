@@ -1,17 +1,28 @@
 .bread-crumbs {
   @include list-reset();
   display: flex;
-  padding-top: 20px;
-  padding-bottom: 49px;
+  padding: 20px 0 27px 1px;
 }
 
 .bread-crumbs__item {
   &:not(:nth-child(1)) {
-    padding-left: 33px;
+    padding-left: 35px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10px;
+      width: 16px;
+      height: 16px;
+      background-image: url(../../img/bi_arrow-right.svg);
+    }
   }
 }
 
 .bread-crumbs__link {
   text-decoration: none;
   @include font(16px, 19px);
+  letter-spacing: 0.03em;
 }

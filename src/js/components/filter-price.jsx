@@ -10,12 +10,25 @@ import { CATALOG } from "../const";
 import { ActionCreator } from "../store/action";
 
 const FilterPrice = (props) => {
-  const { onSetMinPrice, minPrice, maxPrice, onSetMaxPrice } = props;
+  const {
+    onSetMinPrice,
+    minPrice,
+    maxPrice,
+    onSetMaxPrice,
+    filtersState,
+    sortState,
+    getProducts,
+  } = props;
   const defaultMinPrice = getMinPrice(CATALOG);
   const defaultMaxPrice = getMaxPrice(CATALOG);
 
   const minPriceRef = useRef();
   const maxPriceRef = useRef();
+
+  React.useEffect(() => {
+    getProducts({ filtersState, sortState });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filtersState, sortState]);
 
   const onInputPrice = (evt, callback) => {
     const price = Number(evt.target.value.split(" ").join(""));
@@ -101,6 +114,8 @@ const FilterPrice = (props) => {
 const mapStateToProps = (state) => ({
   minPrice: state.FILTER_STATE.minPrice,
   maxPrice: state.FILTER_STATE.maxPrice,
+  filtersState: state.FILTER_STATE,
+  sortState: state.SORT_STATE,
 });
 const mapDispatchToProps = (dispatch) => ({
   onSetMinPrice(value) {
@@ -108,6 +123,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onSetMaxPrice(value) {
     dispatch(ActionCreator.setMaxPrice(value));
+  },
+  getProducts(value) {
+    dispatch(ActionCreator.getProducts(value));
   },
 });
 

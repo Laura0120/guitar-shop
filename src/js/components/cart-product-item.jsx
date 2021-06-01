@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import { ActionCreator } from "../store/action";
 import { addSpacesAfterThreeCharacters } from "../utils";
+import { GUITARS_DATA } from "../const";
 
 const CartProductItem = (props) => {
   const {
@@ -12,7 +13,14 @@ const CartProductItem = (props) => {
     onDecrementClick,
     openPopupDeleteFromCart,
   } = props;
-  const { vendorCode, name, type, countStrings, price, imgMin } = productItem;
+  const {
+    vendorCode,
+    name,
+    nameType,
+    countStrings,
+    price,
+    imgMin,
+  } = productItem;
 
   return (
     <React.Fragment>
@@ -24,7 +32,13 @@ const CartProductItem = (props) => {
           openPopupDeleteFromCart(productItem);
         }}
       ></button>
-      <div className="cart-item__image">
+      <div
+        className={`cart-item__image ${
+          nameType === GUITARS_DATA[1].nameType
+            ? `cart-item__image--electro`
+            : ``
+        }`}
+      >
         <picture>
           <source type="image/webp" set={`img/${imgMin}.webp`} />
           <img src={`img/${imgMin}.jpg`} width="53" height="128" alt={name} />
@@ -34,7 +48,7 @@ const CartProductItem = (props) => {
         <div className="cart-item__data">
           <h3 className="cart-item__title">{name}</h3>
           <p>{`Артикул: ${vendorCode}`}</p>
-          <p>{`${type}, ${countStrings} струнная`}</p>
+          <p>{`${nameType}, ${countStrings} струнная`}</p>
         </div>
         <p className="cart-item__price">{`${addSpacesAfterThreeCharacters(
           price

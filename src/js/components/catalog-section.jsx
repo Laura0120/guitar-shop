@@ -1,6 +1,7 @@
 import React from "react";
 
 import CardProduct from "./card-product";
+import { GUITARS_DATA } from "../const";
 
 const CatalogSection = (props) => {
   const { productList, renderPagination } = props;
@@ -10,7 +11,14 @@ const CatalogSection = (props) => {
       <h2 className="visually-hidden">Список товаров</h2>
       <ul className="catalog__list">
         {productList.map((item, i) => (
-          <li key={i} className="catalog__card-product card-product">
+          <li
+            key={i}
+            className={`catalog__card-product card-product ${
+              item.type === GUITARS_DATA[1].nameType
+                ? `card-product--electro`
+                : ``
+            }`}
+          >
             <CardProduct productItem={item} />
           </li>
         ))}

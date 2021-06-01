@@ -1,8 +1,9 @@
 .sort {
-  padding-bottom: 30px;
+  padding: 24px 12px 30px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  letter-spacing: 0.09em;
 }
 
 .sort h2 {
@@ -18,16 +19,36 @@
   border: none;
   padding: 0;
   margin: 0;
+
+  &--type {
+    margin-right: 236px;
+  }
 }
 
 .sort__checkbox + label {
   cursor: pointer;
 }
-
-.sort__checkbox--type:checked + label {
-  color: $font-color;
+.sort__checkbox--direction + label {
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
 }
 
-.sort__checkbox--direction:checked + label svg path {
-  fill: black;
+.sort__checkbox {
+  &--type:checked + label {
+    color: $font-color;
+  }
+  &--direction:checked + label {
+    & svg path {
+      fill: black;
+    }
+  }
+}
+.sort__label {
+  &--direction-up {
+    margin-right: 22px;
+  }
+  &--type-price {
+    margin-right: 36px;
+  }
 }

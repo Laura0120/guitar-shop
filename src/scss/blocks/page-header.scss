@@ -7,12 +7,18 @@
   justify-content: space-between;
   align-items: center;
 
-  width: $descktop-width;
+  width: $desktop-width;
   margin: 0 auto;
-  padding: 0 $descktop-padding;
+  padding: 0 $desktop-padding;
   min-height: 110px;
 }
 
 .page-header__logo {
   width: 67px;
+}
+
+@media (max-width: $desktop-width) {
+  .page-header {
+    width: max-content;
+  }
 }

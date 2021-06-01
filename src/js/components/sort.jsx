@@ -4,12 +4,25 @@ import { connect } from "react-redux";
 import { ActionCreator } from "../store/action";
 
 const Sort = (props) => {
-  const { typeSort, direction, changeTypeSort, changeDirectionSort } = props;
+  const {
+    typeSort,
+    direction,
+    changeTypeSort,
+    changeDirectionSort,
+    getProducts,
+    filtersState,
+    sortState,
+  } = props;
+
+  React.useEffect(() => {
+    getProducts({ filtersState, sortState });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filtersState, sortState]);
 
   return (
     <form className="page-content__sort sort">
       <h2>Сортировать:</h2>
-      <fieldset className="sort__fieldset">
+      <fieldset className="sort__fieldset sort__fieldset--type">
         <legend className="visually-hidden">Тип сортировки</legend>
         <input
           type="checkbox"
@@ -17,6 +30,10 @@ const Sort = (props) => {
           id="sort-price"
           checked={typeSort.price}
           onChange={() => {
+            typeSort.price === typeSort.popularity
+              ? changeDirectionSort({ up: true, down: false })
+              : changeDirectionSort({ up: direction.up, down: direction.down });
+
             changeTypeSort({
               price: !typeSort.price,
               popularity:
@@ -26,13 +43,22 @@ const Sort = (props) => {
             });
           }}
         ></input>
-        <label htmlFor="sort-price">по цене</label>
+        <label
+          htmlFor="sort-price"
+          className="sort__label sort__label--type-price"
+        >
+          по цене
+        </label>
         <input
           type="checkbox"
           id="sort-popularity"
           checked={typeSort.popularity}
           className="sort__checkbox sort__checkbox--type visually-hidden"
           onChange={() => {
+            typeSort.price === typeSort.popularity
+              ? changeDirectionSort({ up: true, down: false })
+              : changeDirectionSort({ up: direction.up, down: direction.down });
+
             changeTypeSort({
               price:
                 typeSort.price === typeSort.popularity
@@ -52,6 +78,13 @@ const Sort = (props) => {
           id="sort-direction-up"
           checked={direction.up}
           onChange={() => {
+            direction.up === direction.down
+              ? changeTypeSort({ price: true, popularity: false })
+              : changeTypeSort({
+                  price: typeSort.price,
+                  popularity: typeSort.popularity,
+                });
+
             changeDirectionSort({
               up: !direction.up,
               down:
@@ -61,7 +94,10 @@ const Sort = (props) => {
             });
           }}
         ></input>
-        <label htmlFor="sort-direction-up">
+        <label
+          htmlFor="sort-direction-up"
+          className="sort__label sort__label--direction-up"
+        >
           <svg
             width="14"
             height="11"
@@ -82,6 +118,13 @@ const Sort = (props) => {
           id="sort-direction-down"
           checked={direction.down}
           onChange={() => {
+            direction.up === direction.down
+              ? changeTypeSort({ price: true, popularity: false })
+              : changeTypeSort({
+                  price: typeSort.price,
+                  popularity: typeSort.popularity,
+                });
+
             changeDirectionSort({
               up:
                 direction.up === direction.down ? direction.up : !direction.up,
@@ -110,6 +153,8 @@ const Sort = (props) => {
   );
 };
 const mapStateToProps = (state) => ({
+  filtersState: state.FILTER_STATE,
+  sortState: state.SORT_STATE,
   typeSort: state.SORT_STATE.typeSort,
   direction: state.SORT_STATE.direction,
 });
@@ -119,6 +164,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   changeDirectionSort(value) {
     dispatch(ActionCreator.changeDirectionSort(value));
+  },
+  getProducts(value) {
+    dispatch(ActionCreator.getProducts(value));
   },
 });
 

@@ -1,26 +1,29 @@
+.filter {
+  padding-top: 24px;
+}
+
 .filter h2,
 .filter h3 {
   margin: 0;
   @include font(18px, 21px, 700);
+  letter-spacing: 0.05em;
 }
+
 .filter h2 {
-  margin-bottom: 30px;
+  margin-bottom: 27px;
 }
 
 .filter h3 {
-  margin-bottom: 24px;
+  margin-bottom: 23px;
 }
 
 .filter__fieldset {
   border: none;
   border-top: 0.7px solid rgba(221, 218, 218, 1);
-  padding: 29px 0;
+  padding: 31px 0 30px;
   margin: 0;
 }
 
-.filter__fieldset--price h3 {
-  @include font(15px, 18px, 700);
-}
 .filter__price-wrapper {
   display: flex;
   justify-content: space-between;
@@ -36,7 +39,7 @@
 
 .filter__checkbox-wrapper {
   &:not(:last-child) {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 }
 
@@ -45,7 +48,8 @@
   display: block;
   padding: 1.5px 0 1.5px 40px;
   cursor: pointer;
-  @include font(14px, 19px);
+  @include font(16px, 19px);
+  letter-spacing: 0.04em;
 
   &::before {
     content: "";

@@ -1,9 +1,11 @@
 import { ActionType } from "../action";
 import { extend } from "../../utils";
+import { CATALOG } from "../../const";
 
 const initialState = {
   openProduct: null,
   сart: {},
+  products: CATALOG,
   popupAddCartIsOpen: false,
   popupDeleteFromCartIsOpen: false,
   popupAddedSucessfullyIsOpen: false,
@@ -11,6 +13,11 @@ const initialState = {
 
 const appState = (state = initialState, action) => {
   switch (action.type) {
+    case ActionType.GET_PRODUCTS: {
+      return extend(state, {
+        products: action.payload,
+      });
+    }
     case ActionType.TOGGLE_POPUP_ADD_CART_STATE: {
       return extend(state, {
         popupAddCartIsOpen: action.payload,

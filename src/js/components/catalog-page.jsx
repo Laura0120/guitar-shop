@@ -9,20 +9,22 @@ import Sort from "./sort";
 import CatalogSection from "./catalog-section";
 import PopupAddedSuccessfully from "./popup-added-successfully";
 import PopupAddCart from "./popup-add-cart";
+import SocialList from "./social-list";
+import FoooterContent from "./footer-content";
 import withPagination from "../hocs/with-pagination";
-import { AppRoute, CATALOG } from "../const";
+import { AppRoute } from "../const";
 
 const CatalogWrapped = withPagination(CatalogSection);
 
 const CatalogPage = (props) => {
-  const { popupAddCartIsOpen, popupAddedSucessfullyIsOpen } = props;
+  const { popupAddCartIsOpen, popupAddedSucessfullyIsOpen, products } = props;
   return (
     <React.Fragment>
       <header className="page-header">
         <div className="page-header__wrapper">
           <div className="page-header__logo">
             <img
-              src="img/logo.svg"
+              src="img/logo-header.svg"
               width="67"
               height="70"
               alt="Логотип Guitar-shop"
@@ -39,12 +41,28 @@ const CatalogPage = (props) => {
           <Filters />
           <div>
             <Sort />
-            <CatalogWrapped productList={CATALOG} />
+            <CatalogWrapped productList={products} />
           </div>
           {popupAddCartIsOpen && <PopupAddCart />}
           {popupAddedSucessfullyIsOpen && <PopupAddedSuccessfully />}
         </div>
       </main>
+      <footer className="page-footer">
+        <div className="page-footer__wrapper">
+          <div>
+            <div className="page-footer__logo">
+              <img
+                src="img/logo-footer.svg"
+                width="67"
+                height="70"
+                alt="Логотип Guitar-shop"
+              />
+            </div>
+            <SocialList />
+          </div>
+          <FoooterContent />
+        </div>
+      </footer>
     </React.Fragment>
   );
 };
@@ -52,6 +70,7 @@ const CatalogPage = (props) => {
 const mapStateToProps = (state) => ({
   popupAddCartIsOpen: state.APP_STATE.popupAddCartIsOpen,
   popupAddedSucessfullyIsOpen: state.APP_STATE.popupAddedSucessfullyIsOpen,
+  products: state.APP_STATE.products,
 });
 
 export { CatalogPage };

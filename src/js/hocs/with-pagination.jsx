@@ -21,7 +21,7 @@ const withPagination = (Component) => {
           return ++index;
         });
       setPages(pageCountArray);
-    }, []);
+    }, [productList]);
 
     useEffect(() => {
       setRenderedCardCount(currentPage * COUNT_CARDS_ON_PAGES);

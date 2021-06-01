@@ -5,48 +5,55 @@ import { ActionCreator } from "../store/action";
 import { AppRoute } from "../const";
 
 const Navigation = (props) => {
-  const {onCatalogClick}=props
+  const { onCatalogClick } = props;
   return (
     <nav className="page-header__navigation navigation">
       <ul className="navigation__list">
         <li className="navigation__item">
           <a
             href="#catalog"
-            onClick={(evt)=>{
+            onClick={(evt) => {
               evt.preventDefault();
-              onCatalogClick()
+              onCatalogClick();
             }}
-            >Каталог</a>
+          >
+            Каталог
+          </a>
         </li>
         <li className="navigation__item">
-          <a 
-            onClick={(evt)=>{
-              evt.preventDefault()
+          <a
+            onClick={(evt) => {
+              evt.preventDefault();
             }}
-              href="#shops"
-            >Где купить?</a>
+            href="#shops"
+          >
+            Где купить?
+          </a>
         </li>
         <li className="navigation__item">
-          <a 
-            onClick={(evt)=>{
-            evt.preventDefault()
+          <a
+            onClick={(evt) => {
+              evt.preventDefault();
             }}
             href="#about-company"
-            >О компании</a>
+          >
+            О компании
+          </a>
         </li>
         <li className="navigation__item">
-          <a 
-            onClick={(evt)=>{
-            evt.preventDefault()
+          <a
+            onClick={(evt) => {
+              evt.preventDefault();
             }}
             href="#service-centers"
-            >Cервис-центры</a>
+          >
+            Cервис-центры
+          </a>
         </li>
       </ul>
     </nav>
   );
 };
-
 
 const mapDispatchToProps = (dispatch) => ({
   onCatalogClick() {
