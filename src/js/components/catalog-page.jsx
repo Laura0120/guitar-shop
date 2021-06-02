@@ -13,6 +13,7 @@ import SocialList from "./social-list";
 import FoooterContent from "./footer-content";
 import withPagination from "../hocs/with-pagination";
 import { AppRoute } from "../const";
+import { BOOLEAN, PRODUCT_LiST } from "../prop-type";
 
 const CatalogWrapped = withPagination(CatalogSection);
 
@@ -65,6 +66,12 @@ const CatalogPage = (props) => {
       </footer>
     </React.Fragment>
   );
+};
+
+CatalogPage.propTypes = {
+  popupAddCartIsOpen: BOOLEAN,
+  popupAddedSucessfullyIsOpen: BOOLEAN,
+  products: PRODUCT_LiST,
 };
 
 const mapStateToProps = (state) => ({

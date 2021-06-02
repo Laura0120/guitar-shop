@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { disablePageScrolling, enablePageScrolling } from "../utils";
 import { AppRoute } from "../const";
+import { FUNCTION } from "../prop-type";
 import { ActionCreator } from "../store/action";
 
 const PopupAddedSuccessfully = (props) => {
@@ -66,6 +67,11 @@ const PopupAddedSuccessfully = (props) => {
       </div>
     </div>
   );
+};
+
+PopupAddedSuccessfully.propTypes = {
+  closePopupAddedSucessfully: FUNCTION,
+  onCartClick: FUNCTION,
 };
 
 const mapDispatchToProps = (dispatch) => ({

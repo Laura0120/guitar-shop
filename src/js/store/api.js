@@ -1,20 +1,20 @@
 import { CATALOG } from "../const.js";
 
 export const getProducts = (parameters) => {
-  const { filtersState, sortState } = parameters;
+  const { filterState, sortState } = parameters;
 
   const filterItem = (item) => {
-    if (filtersState.minPrice && item.price < filtersState.minPrice) {
+    if (filterState.minPrice && item.price < filterState.minPrice) {
       return false;
     }
-    if (filtersState.maxPrice && item.price > filtersState.maxPrice) {
+    if (filterState.maxPrice && item.price > filterState.maxPrice) {
       return false;
     }
 
-    if (!filtersState.typesChecked[item.type]) {
+    if (!filterState.typesChecked[item.type]) {
       return false;
     }
-    if (!filtersState.quantityStringsChecked[item.countStrings].checked) {
+    if (!filterState.quantityStringsChecked[item.countStrings].checked) {
       return false;
     }
     return true;

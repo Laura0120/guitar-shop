@@ -2,6 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { ActionCreator } from "../store/action";
+import {
+  DIRECTION,
+  FILTER_STATE,
+  FUNCTION,
+  SORT_STATE,
+  TYPE_SORT,
+} from "../prop-type";
 
 const Sort = (props) => {
   const {
@@ -10,14 +17,14 @@ const Sort = (props) => {
     changeTypeSort,
     changeDirectionSort,
     getProducts,
-    filtersState,
+    filterState,
     sortState,
   } = props;
 
   React.useEffect(() => {
-    getProducts({ filtersState, sortState });
+    getProducts({ filterState, sortState });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filtersState, sortState]);
+  }, [filterState, sortState]);
 
   return (
     <form className="page-content__sort sort">
@@ -152,12 +159,24 @@ const Sort = (props) => {
     </form>
   );
 };
+
+Sort.propTypes = {
+  typeSort: TYPE_SORT,
+  direction: DIRECTION,
+  changeTypeSort: FUNCTION,
+  changeDirectionSort: FUNCTION,
+  getProducts: FUNCTION,
+  filterState: FILTER_STATE,
+  sortState: SORT_STATE,
+};
+
 const mapStateToProps = (state) => ({
-  filtersState: state.FILTER_STATE,
+  filterState: state.FILTER_STATE,
   sortState: state.SORT_STATE,
   typeSort: state.SORT_STATE.typeSort,
   direction: state.SORT_STATE.direction,
 });
+
 const mapDispatchToProps = (dispatch) => ({
   changeTypeSort(value) {
     dispatch(ActionCreator.changeTypeSort(value));

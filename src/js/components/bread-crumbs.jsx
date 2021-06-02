@@ -1,7 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import { ActionCreator } from "../store/action";
+import { FUNCTION, STRING } from "../prop-type";
 
 const BreadCrumbs = (props) => {
   const { breadCrumbsList, onPageClick } = props;
@@ -34,6 +36,13 @@ const BreadCrumbs = (props) => {
       ))}
     </ul>
   );
+};
+
+BreadCrumbs.propTypes = {
+  breadCrumbsList: PropTypes.arrayOf(
+    PropTypes.shape({ url: STRING, name: STRING })
+  ).isRequired,
+  onPageClick: FUNCTION,
 };
 
 const mapDispatchToProps = (dispatch) => ({

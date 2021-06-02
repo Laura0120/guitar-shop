@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { disablePageScrolling, enablePageScrolling } from "../utils";
 import { ActionCreator } from "../store/action";
+import { FUNCTION, PRODUCT_ITEM } from "../prop-type";
 import PopupContent from "./popup-content";
 
 const PopupAddCart = (props) => {
@@ -64,9 +65,16 @@ const PopupAddCart = (props) => {
   );
 };
 
+PopupAddCart.propTypes = {
+  productItem: PRODUCT_ITEM,
+  closePopupAddCart: FUNCTION,
+  addToCart: FUNCTION,
+};
+
 const mapStateToProps = (state) => ({
   productItem: state.APP_STATE.openProduct,
 });
+
 const mapDispatchToProps = (dispatch) => ({
   closePopupAddCart() {
     dispatch(ActionCreator.togglePopupAddCartState(false));

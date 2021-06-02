@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { ActionCreator } from "../store/action";
 import PopupContent from "./popup-content";
 import { disablePageScrolling, enablePageScrolling } from "../utils";
+import { FUNCTION, PRODUCT_ITEM } from "../prop-type";
 
 const PopupDeleteFromCart = (props) => {
   const { productItem, closePopupDeleteFromCart, deleteFromCart } = props;
@@ -72,9 +73,16 @@ const PopupDeleteFromCart = (props) => {
   );
 };
 
+PopupDeleteFromCart.propTypes = {
+  productItem: PRODUCT_ITEM,
+  closePopupDeleteFromCart: FUNCTION,
+  deleteFromCart: FUNCTION,
+};
+
 const mapStateToProps = (state) => ({
   productItem: state.APP_STATE.openProduct,
 });
+
 const mapDispatchToProps = (dispatch) => ({
   deleteFromCart(value) {
     dispatch(ActionCreator.togglePopupDeleteFromCartState(false));

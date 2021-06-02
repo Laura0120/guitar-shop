@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { ActionCreator } from "../store/action";
 import { RATING_STAR_COUNT, GUITARS_DATA } from "../const";
 import { addSpacesAfterThreeCharacters } from "../utils";
+import { FUNCTION, PRODUCT_ITEM } from "../prop-type";
 
 const CardProduct = (props) => {
   const { productItem, setOpenProduct, togglePopupAddCartState } = props;
@@ -69,6 +70,12 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.togglePopupAddCartState(value));
   },
 });
+
+CardProduct.propTypes = {
+  productItem: PRODUCT_ITEM,
+  togglePopupAddCartState: FUNCTION,
+  setOpenProduct: FUNCTION,
+};
 
 export { CardProduct };
 export default connect(mapStateToProps, mapDispatchToProps)(CardProduct);

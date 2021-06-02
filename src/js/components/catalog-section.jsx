@@ -2,6 +2,7 @@ import React from "react";
 
 import CardProduct from "./card-product";
 import { GUITARS_DATA } from "../const";
+import { FUNCTION, PRODUCT_LiST } from "../prop-type";
 
 const CatalogSection = (props) => {
   const { productList, renderPagination } = props;
@@ -26,6 +27,11 @@ const CatalogSection = (props) => {
       {renderPagination()}
     </section>
   );
+};
+
+CatalogSection.propTypes = {
+  renderPagination: FUNCTION,
+  productList: PRODUCT_LiST,
 };
 
 export default CatalogSection;

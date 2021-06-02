@@ -8,6 +8,7 @@ import {
 } from "../utils";
 import { CATALOG } from "../const";
 import { ActionCreator } from "../store/action";
+import { FUNCTION, NUMBER, FILTER_STATE, SORT_STATE } from "../prop-type";
 
 const FilterPrice = (props) => {
   const {
@@ -15,7 +16,7 @@ const FilterPrice = (props) => {
     minPrice,
     maxPrice,
     onSetMaxPrice,
-    filtersState,
+    filterState,
     sortState,
     getProducts,
   } = props;
@@ -26,9 +27,9 @@ const FilterPrice = (props) => {
   const maxPriceRef = useRef();
 
   React.useEffect(() => {
-    getProducts({ filtersState, sortState });
+    getProducts({ filterState, sortState });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filtersState, sortState]);
+  }, [filterState, sortState]);
 
   const onInputPrice = (evt, callback) => {
     const price = Number(evt.target.value.split(" ").join(""));
@@ -37,12 +38,13 @@ const FilterPrice = (props) => {
     }
     return;
   };
+
   const onFocusPrice = (evt, callback) => {
     callback(Number(evt.target.value.split(" ").join("")));
   };
 
   const onChangeMinPrice = () => {
-    if (minPrice < defaultMinPrice) {
+    if (minPrice < defaultMinPrice && minPrice > 0) {
       onSetMinPrice(defaultMinPrice);
     }
     if (minPrice > defaultMaxPrice) {
@@ -63,7 +65,7 @@ const FilterPrice = (props) => {
     if (maxPrice > defaultMaxPrice) {
       onSetMaxPrice(defaultMaxPrice);
     }
-    if (maxPrice < defaultMinPrice) {
+    if (maxPrice < defaultMinPrice && maxPrice > 0) {
       onSetMaxPrice(defaultMinPrice);
     }
     if (minPrice !== "" && maxPrice < minPrice) {
@@ -83,7 +85,7 @@ const FilterPrice = (props) => {
           type="text"
           className="filter__input-price"
           placeholder={addSpacesAfterThreeCharacters(defaultMinPrice)}
-          value={addSpacesAfterThreeCharacters(minPrice)}
+          value={minPrice > 0 ? addSpacesAfterThreeCharacters(minPrice) : ""}
           onFocus={(evt) => {
             onFocusPrice(evt, onSetMinPrice);
           }}
@@ -97,7 +99,7 @@ const FilterPrice = (props) => {
           type="text"
           className="filter__input-price"
           placeholder={addSpacesAfterThreeCharacters(defaultMaxPrice)}
-          value={addSpacesAfterThreeCharacters(maxPrice)}
+          value={maxPrice > 0 ? addSpacesAfterThreeCharacters(maxPrice) : ""}
           onFocus={(evt) => {
             onFocusPrice(evt, onSetMaxPrice);
           }}
@@ -111,12 +113,24 @@ const FilterPrice = (props) => {
     </fieldset>
   );
 };
+
+FilterPrice.propTypes = {
+  onSetMinPrice: FUNCTION,
+  minPrice: NUMBER,
+  maxPrice: NUMBER,
+  onSetMaxPrice: FUNCTION,
+  filterState: FILTER_STATE,
+  sortState: SORT_STATE,
+  getProducts: FUNCTION,
+};
+
 const mapStateToProps = (state) => ({
   minPrice: state.FILTER_STATE.minPrice,
   maxPrice: state.FILTER_STATE.maxPrice,
-  filtersState: state.FILTER_STATE,
+  filterState: state.FILTER_STATE,
   sortState: state.SORT_STATE,
 });
+
 const mapDispatchToProps = (dispatch) => ({
   onSetMinPrice(value) {
     dispatch(ActionCreator.setMinPrice(value));

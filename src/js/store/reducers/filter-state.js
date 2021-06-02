@@ -3,8 +3,8 @@ import { extend } from "../../utils";
 import { GUITARS_DATA, QUANTITY_STRINGS_OPTIONS } from "../../const";
 
 const initialState = {
-  minPrice: "",
-  maxPrice: "",
+  minPrice: 0,
+  maxPrice: 0,
   typesChecked: {
     [GUITARS_DATA[0].type]: true,
     [GUITARS_DATA[1].type]: true,

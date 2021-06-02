@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import { ActionCreator } from "../store/action";
 import { AppRoute } from "../const";
+import { FUNCTION } from "../prop-type";
 
 const Navigation = (props) => {
   const { onCatalogClick } = props;
@@ -53,6 +54,10 @@ const Navigation = (props) => {
       </ul>
     </nav>
   );
+};
+
+Navigation.propTypes = {
+  onCatalogClick: FUNCTION,
 };
 
 const mapDispatchToProps = (dispatch) => ({

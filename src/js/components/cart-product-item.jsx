@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { ActionCreator } from "../store/action";
 import { addSpacesAfterThreeCharacters } from "../utils";
 import { GUITARS_DATA } from "../const";
+import { NUMBER, PRODUCT_ITEM, FUNCTION } from "../prop-type";
 
 const CartProductItem = (props) => {
   const {
@@ -84,6 +85,14 @@ const CartProductItem = (props) => {
       </div>
     </React.Fragment>
   );
+};
+
+CartProductItem.propTypes = {
+  productItem: PRODUCT_ITEM,
+  count: NUMBER,
+  onIncrementClick: FUNCTION,
+  onDecrementClick: FUNCTION,
+  openPopupDeleteFromCart: FUNCTION,
 };
 
 const mapDispatchToProps = (dispatch) => ({

@@ -1,5 +1,6 @@
 import React from "react";
 import { addSpacesAfterThreeCharacters } from "../utils";
+import { NUMBER, STRING } from "../prop-type";
 
 const PopupContent = (props) => {
   const { productItem } = props;
@@ -30,6 +31,15 @@ const PopupContent = (props) => {
       </div>
     </div>
   );
+};
+
+PopupContent.propTypes = {
+  vendorCode: STRING,
+  name: STRING,
+  nameType: STRING,
+  countStrings: NUMBER,
+  price: NUMBER,
+  imgMin: STRING,
 };
 
 export default PopupContent;

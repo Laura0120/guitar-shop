@@ -8,6 +8,7 @@ import CartSection from "./cart-section";
 import SocialList from "./social-list";
 import FoooterContent from "./footer-content";
 import PopupDeleteFromCart from "./popup-delete-from-cart";
+import { BOOLEAN } from "../prop-type";
 
 import { AppRoute } from "../const";
 
@@ -55,6 +56,10 @@ const CartPage = (props) => {
       </footer>
     </React.Fragment>
   );
+};
+
+CartPage.propTypes = {
+  popupDeleteFromCartIsOpen: BOOLEAN,
 };
 
 const mapStateToProps = (state) => ({

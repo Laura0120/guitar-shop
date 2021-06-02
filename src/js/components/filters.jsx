@@ -3,6 +3,13 @@ import { connect } from "react-redux";
 
 import { GUITARS_DATA, QUANTITY_STRINGS_OPTIONS } from "../const";
 import { ActionCreator } from "../store/action";
+import {
+  FUNCTION,
+  FILTER_STATE,
+  SORT_STATE,
+  TYPES_CHECKED,
+  QUANTITY_STRINGS_CHECKED,
+} from "../prop-type";
 
 import FilterPrice from "./filter-price";
 
@@ -12,15 +19,15 @@ const Filters = (props) => {
     quantityStringsChecked,
     changeTypesChecked,
     changeQuantityStringsChecked,
-    filtersState,
+    filterState,
     sortState,
     getProducts,
   } = props;
 
   React.useEffect(() => {
-    getProducts({ filtersState, sortState });
+    getProducts({ filterState, sortState });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filtersState, sortState]);
+  }, [filterState, sortState]);
 
   return (
     <form className="page-content__filter filter">
@@ -69,10 +76,21 @@ const Filters = (props) => {
     </form>
   );
 };
+
+Filters.propTypes = {
+  filterState: FILTER_STATE,
+  sortState: SORT_STATE,
+  getProducts: FUNCTION,
+  changeTypesChecked: FUNCTION,
+  changeQuantityStringsChecked: FUNCTION,
+  typesChecked: TYPES_CHECKED,
+  quantityStringsChecked: QUANTITY_STRINGS_CHECKED,
+};
+
 const mapStateToProps = (state) => ({
   typesChecked: state.FILTER_STATE.typesChecked,
   quantityStringsChecked: state.FILTER_STATE.quantityStringsChecked,
-  filtersState: state.FILTER_STATE,
+  filterState: state.FILTER_STATE,
   sortState: state.SORT_STATE,
 });
 const mapDispatchToProps = (dispatch) => ({

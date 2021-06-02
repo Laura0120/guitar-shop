@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import CartProductItem from "./cart-product-item";
 import { PROMO_CODE, GUITARS_DATA } from "../const";
 import { addSpacesAfterThreeCharacters } from "../utils";
+import { NUMBER, PRODUCT_ITEM } from "../prop-type";
 
 const CartSection = (props) => {
   const { itemsInTheCart } = props;
@@ -104,6 +106,13 @@ const CartSection = (props) => {
       </div>
     </section>
   );
+};
+
+CartSection.propTypes = {
+  itemsInTheCart: PropTypes.shape({
+    count: NUMBER,
+    product: PRODUCT_ITEM,
+  }),
 };
 
 const mapStateToProps = (state) => ({

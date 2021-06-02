@@ -1,4 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+import { FUNCTION, NUMBER } from "../prop-type";
 
 const Pagination = (props) => {
   const {
@@ -77,6 +80,15 @@ const Pagination = (props) => {
       </button>
     </section>
   );
+};
+
+Pagination.propTypes = {
+  onClickNextButton: FUNCTION,
+  onClickBackButton: FUNCTION,
+  onChangePage: FUNCTION,
+  pages: PropTypes.arrayOf(NUMBER),
+  visiblePages: PropTypes.arrayOf(NUMBER),
+  currentPage: NUMBER,
 };
 
 export default Pagination;

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import { ActionCreator } from "../store/action";
 import { AppRoute } from "../const";
+import { FUNCTION, NUMBER } from "../prop-type";
 
 const MenuUser = (props) => {
   const { countItemsInCart, onCartClick } = props;
@@ -48,6 +49,11 @@ const MenuUser = (props) => {
       </a>
     </div>
   );
+};
+
+MenuUser.propTypes = {
+  countItemsInCart: NUMBER,
+  onCartClick: FUNCTION,
 };
 
 const mapStateToProps = (state) => ({
