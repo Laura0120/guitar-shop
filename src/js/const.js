@@ -33,6 +33,7 @@ export const CATALOG = [
     vendorCode: "SO757575",
     name: "Честер Bass",
     type: GUITARS_DATA[1].type,
+    nameType: GUITARS_DATA[1].nameType,
     popularity: 15,
     countStrings: 7,
     price: 17500,

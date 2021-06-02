@@ -25,6 +25,14 @@
       @include font(10px, 12px, $color: rgba(242, 5, 5, 1));
     }
   }
+
+  &:hover img {
+    opacity: 0.7;
+  }
+
+  &:active img {
+    opacity: 0.5;
+  }
 }
 .menu-user__item-icon {
   &--location {

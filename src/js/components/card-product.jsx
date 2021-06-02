@@ -18,7 +18,7 @@ const CardProduct = (props) => {
         }`}
       >
         <picture>
-          <source type="image/webp" set={`img/${img}.webp`} />
+          <source type="image/webp" srcSet={`img/${img}.webp`} />
           <img src={`img/${img}.jpg`} width="68" height="190" alt={name} />
         </picture>
       </div>

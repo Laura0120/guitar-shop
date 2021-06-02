@@ -62,11 +62,27 @@
     border-radius: 2px;
   }
 }
-.filter__checkbox:checked + label {
-  &::before {
-    background: url(../../img/check-mark.svg) no-repeat center;
+
+.filter__checkbox {
+  &:hover + label {
+    &::before {
+      border: 0.7px solid rgba(88, 87, 87, 1);
+    }
+  }
+
+  &:active + label {
+    &::before {
+      border: 0.7px solid rgba(193, 193, 193, 1);
+    }
+  }
+
+  &:checked + label {
+    &::before {
+      background: url(../../img/check-mark.svg) no-repeat center;
+    }
   }
 }
+
 .filter__checkbox:disabled + label {
   color: rgba(221, 221, 221, 1);
   &::before {

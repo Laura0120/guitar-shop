@@ -54,6 +54,7 @@ const Pagination = (props) => {
   };
   return (
     <section className="catalog__pagination pagination">
+      <h2 className="visually-hidden">Пагинация </h2>
       {currentPage > 1 ? (
         <button
           type="button"

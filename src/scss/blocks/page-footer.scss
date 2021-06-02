@@ -3,6 +3,7 @@
   background-color: rgba(63, 63, 63, 1);
   @include font(10px, 12px, 400, white);
   z-index: 2;
+  flex: 0 0 auto;
 }
 
 .page-footer__wrapper {

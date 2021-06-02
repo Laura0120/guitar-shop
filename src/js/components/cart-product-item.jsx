@@ -41,7 +41,7 @@ const CartProductItem = (props) => {
         }`}
       >
         <picture>
-          <source type="image/webp" set={`img/${imgMin}.webp`} />
+          <source type="image/webp" srcSet={`img/${imgMin}.webp`} />
           <img src={`img/${imgMin}.jpg`} width="53" height="128" alt={name} />
         </picture>
       </div>

@@ -75,7 +75,9 @@ const Sort = (props) => {
             });
           }}
         ></input>
-        <label htmlFor="sort-popularity">по популярности</label>
+        <label htmlFor="sort-popularity" className="sort__label">
+          по популярности
+        </label>
       </fieldset>
       <fieldset className="sort__fieldset">
         <legend className="visually-hidden">Направление сортировки</legend>
@@ -139,7 +141,10 @@ const Sort = (props) => {
             });
           }}
         ></input>
-        <label htmlFor="sort-direction-down">
+        <label
+          htmlFor="sort-direction-down"
+          className="sort__label sort__label--direction-down"
+        >
           <svg
             width="14"
             height="11"

@@ -18,10 +18,11 @@
   width: 48px;
   height: 124px;
   margin-right: 71px;
+  margin-right: 62px;
 
   &--electro {
     width: 61px;
-    margin-right: 62px;
+    margin-right: 51px;
   }
 }
 
@@ -32,14 +33,13 @@
 
 .cart-item__wrapper {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 787px;
+  flex-grow: 1;
 }
 
 .cart-item__data {
   align-self: flex-start;
-  width: 43%;
+  flex-grow: 1;
 }
 
 .cart-item__title {
@@ -54,16 +54,17 @@
 
 .cart-item__price {
   font-size: 20px;
-  width: 20%;
+  width: 160px;
   margin: 0;
+  text-align: center;
 }
 
 .cart-item__buttons-wrapper {
   align-self: flex-start;
   display: flex;
-  align-items: center;
-  width: 20.5%;
+  width: 160px;
   padding-top: 20px;
+  padding-left: 40px;
 }
 
 .cart-item__button {
@@ -90,4 +91,6 @@
   font-size: 20px;
   font-weight: 700;
   margin: 0;
+  width: 160px;
+  text-align: end;
 }

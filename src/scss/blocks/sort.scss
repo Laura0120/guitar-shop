@@ -11,10 +11,6 @@
   @include font(16px, 20px, 400);
 }
 
-.sort label {
-  @include font(16px, 20px, 400, rgba(88, 87, 87, 1));
-}
-
 .sort__fieldset {
   border: none;
   padding: 0;
@@ -23,15 +19,6 @@
   &--type {
     margin-right: 236px;
   }
-}
-
-.sort__checkbox + label {
-  cursor: pointer;
-}
-.sort__checkbox--direction + label {
-  cursor: pointer;
-  width: 22px;
-  height: 22px;
 }
 
 .sort__checkbox {
@@ -45,8 +32,16 @@
   }
 }
 .sort__label {
+  @include font(16px, 20px, 400, rgba(88, 87, 87, 1));
+  cursor: pointer;
+
   &--direction-up {
-    margin-right: 22px;
+    margin-right: 2px;
+    padding: 10px;
+  }
+
+  &--direction-down {
+    padding: 10px 0 10px 10px;
   }
   &--type-price {
     margin-right: 36px;

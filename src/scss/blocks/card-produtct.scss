@@ -62,10 +62,13 @@
     margin-bottom: 14px;
   }
 }
-.card-product__button--buy {
-  padding-left: 28px;
-  padding-right: 14px;
-  background-image: url(../../img/cart.svg);
-  background-repeat: no-repeat;
-  background-position: 11px center;
+.card-product__button {
+  font-size: 12px;
+  &--buy {
+    padding-left: 28px;
+    padding-right: 14px;
+    background-image: url(../../img/cart.svg);
+    background-repeat: no-repeat;
+    background-position: 11px center;
+  }
 }

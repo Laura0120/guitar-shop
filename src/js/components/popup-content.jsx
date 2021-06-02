@@ -1,6 +1,6 @@
 import React from "react";
 import { addSpacesAfterThreeCharacters } from "../utils";
-import { NUMBER, STRING } from "../prop-type";
+import { PRODUCT_ITEM } from "../prop-type";
 
 const PopupContent = (props) => {
   const { productItem } = props;
@@ -17,7 +17,7 @@ const PopupContent = (props) => {
     <div className="popup__content">
       <div className="popup__image">
         <picture>
-          <source type="image/webp" set={`img/${imgMin}.webp`} />
+          <source type="image/webp" srcSet={`img/${imgMin}.webp`} />
           <img src={`img/${imgMin}.jpg`} width="53" height="128" alt={name} />
         </picture>
       </div>
@@ -34,12 +34,7 @@ const PopupContent = (props) => {
 };
 
 PopupContent.propTypes = {
-  vendorCode: STRING,
-  name: STRING,
-  nameType: STRING,
-  countStrings: NUMBER,
-  price: NUMBER,
-  imgMin: STRING,
+  productItem: PRODUCT_ITEM,
 };
 
 export default PopupContent;

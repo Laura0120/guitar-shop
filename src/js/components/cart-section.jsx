@@ -109,10 +109,12 @@ const CartSection = (props) => {
 };
 
 CartSection.propTypes = {
-  itemsInTheCart: PropTypes.shape({
-    count: NUMBER,
-    product: PRODUCT_ITEM,
-  }),
+  itemsInTheCart: PropTypes.arrayOf(
+    PropTypes.shape({
+      count: NUMBER,
+      product: PRODUCT_ITEM,
+    })
+  ),
 };
 
 const mapStateToProps = (state) => ({
