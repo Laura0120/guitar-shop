@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import Navigation from "./navigation";
@@ -13,12 +13,32 @@ import SocialList from "./social-list";
 import FoooterContent from "./footer-content";
 import withPagination from "../hocs/with-pagination";
 import { AppRoute } from "../const";
-import { BOOLEAN, PRODUCT_LiST } from "../prop-type";
+import {
+  BOOLEAN,
+  PRODUCT_LiST,
+  FILTER_STATE,
+  SORT_STATE,
+  FUNCTION,
+} from "../prop-type";
+import { ActionCreator } from "../store/action";
 
 const CatalogWrapped = withPagination(CatalogSection);
 
 const CatalogPage = (props) => {
-  const { popupAddCartIsOpen, popupAddedSucessfullyIsOpen, products } = props;
+  const {
+    popupAddCartIsOpen,
+    popupAddedSucessfullyIsOpen,
+    products,
+    filterState,
+    sortState,
+    setProducts,
+  } = props;
+
+  useEffect(() => {
+    setProducts({ filterState, sortState });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filterState, sortState]);
+
   return (
     <React.Fragment>
       <header className="page-header">
@@ -72,13 +92,22 @@ CatalogPage.propTypes = {
   popupAddCartIsOpen: BOOLEAN,
   popupAddedSucessfullyIsOpen: BOOLEAN,
   products: PRODUCT_LiST,
+  filterState: FILTER_STATE,
+  sortState: SORT_STATE,
+  setProducts: FUNCTION,
 };
 
 const mapStateToProps = (state) => ({
   popupAddCartIsOpen: state.APP_STATE.popupAddCartIsOpen,
   popupAddedSucessfullyIsOpen: state.APP_STATE.popupAddedSucessfullyIsOpen,
   products: state.APP_STATE.products,
+  filterState: state.FILTER_STATE,
+  sortState: state.SORT_STATE,
 });
-
+const mapDispatchToProps = (dispatch) => ({
+  setProducts(value) {
+    dispatch(ActionCreator.setProducts(value));
+  },
+});
 export { CatalogPage };
-export default connect(mapStateToProps, null)(CatalogPage);
+export default connect(mapStateToProps, mapDispatchToProps)(CatalogPage);

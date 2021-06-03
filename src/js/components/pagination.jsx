@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { FUNCTION, NUMBER } from "../prop-type";
+import { PaginationData } from "../const";
 
 const Pagination = (props) => {
   const {
@@ -31,7 +32,9 @@ const Pagination = (props) => {
   const getPages = (items) => {
     return (
       <React.Fragment>
-        {items.slice(0, 2).map(getPageElement)}
+        {items
+          .slice(0, PaginationData.PAGES_BEFORE_CUTTING)
+          .map(getPageElement)}
         <div className="pagination__item">
           <svg
             width="8"
@@ -47,7 +50,9 @@ const Pagination = (props) => {
           </svg>
         </div>
         {getPageElement(
-          items.length > 7 ? currentPage + 6 : items[items.length - 1]
+          items.length > PaginationData.MAX_VISIBLE_PAGES
+            ? currentPage + (PaginationData.MAX_VISIBLE_PAGES - 1)
+            : items[items.length - 1]
         )}
       </React.Fragment>
     );

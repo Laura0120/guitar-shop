@@ -13,7 +13,7 @@ const initialState = {
 
 const appState = (state = initialState, action) => {
   switch (action.type) {
-    case ActionType.GET_PRODUCTS: {
+    case ActionType.SET_PRODUCTS: {
       return extend(state, {
         products: action.payload,
       });

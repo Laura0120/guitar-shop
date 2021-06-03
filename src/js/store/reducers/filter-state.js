@@ -31,36 +31,7 @@ const filterState = (state = initialState, action) => {
       });
     }
     case ActionType.CHANGE_TYPES_CHECKED: {
-      const updatedTypesChecked = { ...state.typesChecked, ...action.payload };
-      const uniqueActiveQuantityStrings = [
-        ...new Set(
-          GUITARS_DATA.filter((data) => updatedTypesChecked[data.type]).reduce(
-            (acc, data) => [...acc, ...data.quantityStrings],
-            []
-          )
-        ),
-      ];
-
-      const updatedQuantityStringsChecked = Object.entries(
-        state.quantityStringsChecked
-      ).reduce((acc, [key, value]) => {
-        const quantityStrings = Number(key);
-        if (!uniqueActiveQuantityStrings.includes(quantityStrings)) {
-          return {
-            ...acc,
-            [quantityStrings]: { available: false, checked: false },
-          };
-        }
-
-        return value.available
-          ? { ...acc, [quantityStrings]: value }
-          : { ...acc, [quantityStrings]: { available: true, checked: true } };
-      }, {});
-
-      return extend(state, {
-        typesChecked: updatedTypesChecked,
-        quantityStringsChecked: updatedQuantityStringsChecked,
-      });
+      return extend(state, action.payload);
     }
     case ActionType.CHANGE_QUANTITY_STRINGS_CHECKED: {
       return extend(state, {

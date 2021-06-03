@@ -1,7 +1,7 @@
 import { getProducts } from "./api";
 
 const ActionType = {
-  GET_PRODUCTS: "GET_PRODUCTS",
+  SET_PRODUCTS: "SET_PRODUCTS",
   REDIRECT_TO_ROUTE: "REDIRECT_TO_ROUTE",
   ADD_TO_CART: "ADD_TO_CART",
   REDUCE_IN_CART: "REDUCE_IN_CART",
@@ -19,8 +19,8 @@ const ActionType = {
 };
 
 const ActionCreator = {
-  getProducts: (value) => ({
-    type: ActionType.GET_PRODUCTS,
+  setProducts: (value) => ({
+    type: ActionType.SET_PRODUCTS,
     payload: getProducts(value),
   }),
   redirectToRoute: (url) => ({

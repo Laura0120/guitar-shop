@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { COUNT_CARDS_ON_PAGES } from "../const";
+import { PaginationData } from "../const";
 import Pagination from "../components/pagination";
 
 const withPagination = (Component) => {
@@ -9,11 +9,13 @@ const withPagination = (Component) => {
     const [pages, setPages] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [renderedCardCount, setRenderedCardCount] = useState(
-      COUNT_CARDS_ON_PAGES
+      PaginationData.COUNT_CARDS_ON_PAGES
     );
 
     useEffect(() => {
-      const pageCount = Math.ceil(productList.length / COUNT_CARDS_ON_PAGES);
+      const pageCount = Math.ceil(
+        productList.length / PaginationData.COUNT_CARDS_ON_PAGES
+      );
       const pageCountArray = new Array(pageCount)
         .join()
         .split(",")
@@ -24,27 +26,27 @@ const withPagination = (Component) => {
     }, [productList]);
 
     useEffect(() => {
-      setRenderedCardCount(currentPage * COUNT_CARDS_ON_PAGES);
+      setRenderedCardCount(currentPage * PaginationData.COUNT_CARDS_ON_PAGES);
     }, [currentPage]);
 
     const visiblePages =
-      pages.slice(pages.indexOf(currentPage)).length > 3
+      pages.slice(pages.indexOf(currentPage)).length >
+      PaginationData.MIN_VISIBLE_PAGES
         ? pages.slice(pages.indexOf(currentPage))
-        : pages.slice(pages.length - 3);
+        : pages.slice(pages.length - PaginationData.MIN_VISIBLE_PAGES);
 
     const onClickNextButton = () => {
       if (currentPage < pages.length) {
         return setCurrentPage(currentPage + 1);
-      } else {
-        return setCurrentPage(currentPage);
       }
+      return setCurrentPage(currentPage);
     };
 
     return (
       <Component
         {...props}
         productList={productList.slice(
-          renderedCardCount - COUNT_CARDS_ON_PAGES,
+          renderedCardCount - PaginationData.COUNT_CARDS_ON_PAGES,
           renderedCardCount
         )}
         renderPagination={() => {

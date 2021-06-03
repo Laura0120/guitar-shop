@@ -3,10 +3,9 @@ import { connect } from "react-redux";
 
 import { GUITARS_DATA, QUANTITY_STRINGS_OPTIONS } from "../const";
 import { ActionCreator } from "../store/action";
+
 import {
   FUNCTION,
-  FILTER_STATE,
-  SORT_STATE,
   TYPES_CHECKED,
   QUANTITY_STRINGS_CHECKED,
 } from "../prop-type";
@@ -19,15 +18,7 @@ const Filters = (props) => {
     quantityStringsChecked,
     changeTypesChecked,
     changeQuantityStringsChecked,
-    filterState,
-    sortState,
-    getProducts,
   } = props;
-
-  React.useEffect(() => {
-    getProducts({ filterState, sortState });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filterState, sortState]);
 
   return (
     <form className="page-content__filter filter">
@@ -43,7 +34,11 @@ const Filters = (props) => {
               id={item.type}
               checked={typesChecked[item.type]}
               onChange={() => {
-                changeTypesChecked({ [item.type]: !typesChecked[item.type] });
+                changeTypesChecked(
+                  typesChecked,
+                  { [item.type]: !typesChecked[item.type] },
+                  quantityStringsChecked
+                );
               }}
             />
             <label htmlFor={item.type}>{item.nameGroup}</label>
@@ -78,9 +73,6 @@ const Filters = (props) => {
 };
 
 Filters.propTypes = {
-  filterState: FILTER_STATE,
-  sortState: SORT_STATE,
-  getProducts: FUNCTION,
   changeTypesChecked: FUNCTION,
   changeQuantityStringsChecked: FUNCTION,
   typesChecked: TYPES_CHECKED,
@@ -90,18 +82,41 @@ Filters.propTypes = {
 const mapStateToProps = (state) => ({
   typesChecked: state.FILTER_STATE.typesChecked,
   quantityStringsChecked: state.FILTER_STATE.quantityStringsChecked,
-  filterState: state.FILTER_STATE,
-  sortState: state.SORT_STATE,
 });
 const mapDispatchToProps = (dispatch) => ({
-  changeTypesChecked(value) {
-    dispatch(ActionCreator.changeTypesChecked(value));
+  changeTypesChecked(typesChecked, value, quantityStringsChecked) {
+    const updatedTypesChecked = { ...typesChecked, ...value };
+    const uniqueActiveQuantityStrings = [
+      ...new Set(
+        GUITARS_DATA.filter((data) => updatedTypesChecked[data.type]).reduce(
+          (acc, data) => [...acc, ...data.quantityStrings],
+          []
+        )
+      ),
+    ];
+    const updatedQuantityStringsChecked = Object.entries(
+      quantityStringsChecked
+    ).reduce((acc, [key, value]) => {
+      const quantityStrings = Number(key);
+      if (!uniqueActiveQuantityStrings.includes(quantityStrings)) {
+        return {
+          ...acc,
+          [quantityStrings]: { available: false, checked: false },
+        };
+      }
+      return value.available
+        ? { ...acc, [quantityStrings]: value }
+        : { ...acc, [quantityStrings]: { available: true, checked: true } };
+    }, {});
+    dispatch(
+      ActionCreator.changeTypesChecked({
+        typesChecked: updatedTypesChecked,
+        quantityStringsChecked: updatedQuantityStringsChecked,
+      })
+    );
   },
   changeQuantityStringsChecked(value) {
     dispatch(ActionCreator.changeQuantityStringsChecked(value));
-  },
-  getProducts(value) {
-    dispatch(ActionCreator.getProducts(value));
   },
 });
 

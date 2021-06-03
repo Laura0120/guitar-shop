@@ -2,23 +2,46 @@ export const AppRoute = {
   CATALOG: { url: "/", name: "Каталог" },
   CART: { url: "/cart", name: "Оформляем" },
 };
-export const PROMO_CODE = ["GITARAHIT", "SUPERGITARA", "GITARA2020"];
-export const COUNT_CARDS_ON_PAGES = 9;
+export const PromoCode = {
+  GITARAHIT: {
+    discountPercentage: 10,
+    maxPercentageOfTheOrder: null,
+    discountAmount: null,
+  },
+  SUPERGITARA: {
+    discountPercentage: null,
+    maxPercentageOfTheOrder: null,
+    discountAmount: 700,
+  },
+  GITARA2020: {
+    discountPercentage: null,
+    maxPercentageOfTheOrder: 30,
+    discountAmount: 3500,
+  },
+};
+
 export const QUANTITY_STRINGS_OPTIONS = [4, 6, 7, 12];
 export const RATING_STAR_COUNT = [1, 2, 3, 4, 5];
+
+export const PaginationData = {
+  COUNT_CARDS_ON_PAGES: 9,
+  MAX_VISIBLE_PAGES: 7,
+  MIN_VISIBLE_PAGES: 3,
+  PAGES_BEFORE_CUTTING: 2,
+};
 
 export const GUITARS_DATA = [
   {
     type: "acoustic",
     nameType: "акустическая гитара",
     nameGroup: "Акустические гитары",
-    quantityStrings: [4, 6, 7],
+    quantityStrings: [6, 7, 12],
   },
   {
     type: "electro",
     nameType: "электрогитара",
     nameGroup: "Электрогитары",
-    quantityStrings: [6, 7, 12],
+    quantityStrings: [4, 6, 7],
   },
   {
     type: "ukulele",
@@ -327,7 +350,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "SO757575",
+    vendorCode: "SO857575",
     name: "Честер Bass",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -338,7 +361,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "TK129049",
+    vendorCode: "TK129149",
     name: "СURT Z300",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -349,7 +372,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "RO111111",
+    vendorCode: "RO111211",
     name: "Roman LX",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -360,7 +383,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "TK436457",
+    vendorCode: "TK425457",
     name: "	СURT T300",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -371,7 +394,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "DI192138",
+    vendorCode: "DI191238",
     name: "Dania Super",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -382,7 +405,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "SO934345",
+    vendorCode: "SO934745",
     name: "Честер WX",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -393,7 +416,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "DI082347",
+    vendorCode: "DI052347",
     name: "Dania VX",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -404,7 +427,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "SO135646",
+    vendorCode: "SO135644",
     name: "Честер Plus",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -415,7 +438,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "VO154751",
+    vendorCode: "VO354751",
     name: "Виолана 300",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -426,7 +449,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "TK244556",
+    vendorCode: "TK244526",
     name: "СURT Clasic",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -437,7 +460,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "TK134663",
+    vendorCode: "TK135563",
     name: "СURT Z250",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -448,7 +471,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "SO123212",
+    vendorCode: "SO124112",
     name: "Честер 7X",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -459,7 +482,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "SO123234",
+    vendorCode: "SO123114",
     name: "Честер 6V",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -470,7 +493,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "VO519510",
+    vendorCode: "VO599510",
     name: "Виолана Mix",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -481,7 +504,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "VO457369",
+    vendorCode: "VO455169",
     name: "Виолана 250x",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -492,7 +515,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "FB625903",
+    vendorCode: "FB775903",
     name: "Фабио Лайт",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -503,7 +526,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "FB576948",
+    vendorCode: "FB565948",
     name: "Фабио L100",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -514,7 +537,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "LU012032",
+    vendorCode: "LU011332",
     name: "Liana Z200",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -525,7 +548,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "LU546853",
+    vendorCode: "LU544453",
     name: "Liana Z100",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -536,7 +559,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "LU458283",
+    vendorCode: "LU459983",
     name: "Liana Z300",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -547,7 +570,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "RO324341",
+    vendorCode: "RO334341",
     name: "Roman RX",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -558,7 +581,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "RO214235",
+    vendorCode: "RO964235",
     name: "Roman TX",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -569,7 +592,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "DI132414",
+    vendorCode: "DI772414",
     name: "Dania U100",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -580,7 +603,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "DI934754",
+    vendorCode: "DI925754",
     name: "Dania WR",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -591,7 +614,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "DI034292",
+    vendorCode: "DI036692",
     name: "Dania LE",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -602,7 +625,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "MI193214",
+    vendorCode: "MI193884",
     name: "Mirana V10",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -613,7 +636,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "VO043244",
+    vendorCode: "VO055244",
     name: "Виолана Mini",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -624,7 +647,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "SO757575",
+    vendorCode: "SO763575",
     name: "Честер Bass",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -635,7 +658,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "TK129049",
+    vendorCode: "TK175049",
     name: "СURT Z300",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -646,7 +669,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "RO111111",
+    vendorCode: "RO113211",
     name: "Roman LX",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -657,7 +680,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "TK436457",
+    vendorCode: "TK435457",
     name: "	СURT T300",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -668,7 +691,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "DI192138",
+    vendorCode: "DI163138",
     name: "Dania Super",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -679,7 +702,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "SO934345",
+    vendorCode: "SO954345",
     name: "Честер WX",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -690,7 +713,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "DI082347",
+    vendorCode: "DI088847",
     name: "Dania VX",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -701,7 +724,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "SO135646",
+    vendorCode: "SO135996",
     name: "Честер Plus",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -712,7 +735,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "VO154751",
+    vendorCode: "VO154756",
     name: "Виолана 300",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -723,7 +746,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "TK244556",
+    vendorCode: "TK244522",
     name: "СURT Clasic",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -734,7 +757,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "TK134663",
+    vendorCode: "TK114663",
     name: "СURT Z250",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -745,7 +768,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "SO123212",
+    vendorCode: "SO125512",
     name: "Честер 7X",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -756,7 +779,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "SO123234",
+    vendorCode: "SO122234",
     name: "Честер 6V",
     type: GUITARS_DATA[1].type,
     nameType: GUITARS_DATA[1].nameType,
@@ -767,7 +790,7 @@ export const CATALOG = [
     imgMin: "electro-min",
   },
   {
-    vendorCode: "VO519510",
+    vendorCode: "VO515510",
     name: "Виолана Mix",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -778,7 +801,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "VO457369",
+    vendorCode: "VO457377",
     name: "Виолана 250x",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -789,7 +812,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "FB625903",
+    vendorCode: "FB625900",
     name: "Фабио Лайт",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -800,7 +823,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "FB576948",
+    vendorCode: "FB576911",
     name: "Фабио L100",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -811,7 +834,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "LU012032",
+    vendorCode: "LU012041",
     name: "Liana Z200",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -822,7 +845,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "LU546853",
+    vendorCode: "LU546852",
     name: "Liana Z100",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -833,7 +856,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "LU458283",
+    vendorCode: "LU458266",
     name: "Liana Z300",
     type: GUITARS_DATA[0].type,
     nameType: GUITARS_DATA[0].nameType,
@@ -844,7 +867,7 @@ export const CATALOG = [
     imgMin: "acoustic-min",
   },
   {
-    vendorCode: "RO324341",
+    vendorCode: "RO324317",
     name: "Roman RX",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -855,7 +878,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "RO214235",
+    vendorCode: "RO214294",
     name: "Roman TX",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -866,7 +889,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "DI132414",
+    vendorCode: "DI132422",
     name: "Dania U100",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -877,7 +900,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "DI934754",
+    vendorCode: "DI934777",
     name: "Dania WR",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,
@@ -888,7 +911,7 @@ export const CATALOG = [
     imgMin: "ukulele-min",
   },
   {
-    vendorCode: "DI034292",
+    vendorCode: "DI034244",
     name: "Dania LE",
     type: GUITARS_DATA[2].type,
     nameType: GUITARS_DATA[2].nameType,

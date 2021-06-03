@@ -2,29 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { ActionCreator } from "../store/action";
-import {
-  DIRECTION,
-  FILTER_STATE,
-  FUNCTION,
-  SORT_STATE,
-  TYPE_SORT,
-} from "../prop-type";
+import { DIRECTION, FUNCTION, TYPE_SORT } from "../prop-type";
 
 const Sort = (props) => {
-  const {
-    typeSort,
-    direction,
-    changeTypeSort,
-    changeDirectionSort,
-    getProducts,
-    filterState,
-    sortState,
-  } = props;
-
-  React.useEffect(() => {
-    getProducts({ filterState, sortState });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filterState, sortState]);
+  const { typeSort, direction, changeTypeSort, changeDirectionSort } = props;
 
   return (
     <form className="page-content__sort sort">
@@ -42,11 +23,8 @@ const Sort = (props) => {
               : changeDirectionSort({ up: direction.up, down: direction.down });
 
             changeTypeSort({
-              price: !typeSort.price,
-              popularity:
-                typeSort.price === typeSort.popularity
-                  ? typeSort.popularity
-                  : !typeSort.popularity,
+              price: true,
+              popularity: false,
             });
           }}
         ></input>
@@ -67,11 +45,8 @@ const Sort = (props) => {
               : changeDirectionSort({ up: direction.up, down: direction.down });
 
             changeTypeSort({
-              price:
-                typeSort.price === typeSort.popularity
-                  ? typeSort.price
-                  : !typeSort.price,
-              popularity: !typeSort.popularity,
+              price: false,
+              popularity: true,
             });
           }}
         ></input>
@@ -95,11 +70,8 @@ const Sort = (props) => {
                 });
 
             changeDirectionSort({
-              up: !direction.up,
-              down:
-                direction.up === direction.down
-                  ? direction.down
-                  : !direction.down,
+              up: true,
+              down: false,
             });
           }}
         ></input>
@@ -135,9 +107,8 @@ const Sort = (props) => {
                 });
 
             changeDirectionSort({
-              up:
-                direction.up === direction.down ? direction.up : !direction.up,
-              down: !direction.down,
+              up: false,
+              down: true,
             });
           }}
         ></input>
@@ -170,14 +141,9 @@ Sort.propTypes = {
   direction: DIRECTION,
   changeTypeSort: FUNCTION,
   changeDirectionSort: FUNCTION,
-  getProducts: FUNCTION,
-  filterState: FILTER_STATE,
-  sortState: SORT_STATE,
 };
 
 const mapStateToProps = (state) => ({
-  filterState: state.FILTER_STATE,
-  sortState: state.SORT_STATE,
   typeSort: state.SORT_STATE.typeSort,
   direction: state.SORT_STATE.direction,
 });
@@ -188,9 +154,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
   changeDirectionSort(value) {
     dispatch(ActionCreator.changeDirectionSort(value));
-  },
-  getProducts(value) {
-    dispatch(ActionCreator.getProducts(value));
   },
 });
 

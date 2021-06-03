@@ -8,28 +8,15 @@ import {
 } from "../utils";
 import { CATALOG } from "../const";
 import { ActionCreator } from "../store/action";
-import { FUNCTION, NUMBER, FILTER_STATE, SORT_STATE } from "../prop-type";
+import { FUNCTION, NUMBER } from "../prop-type";
 
 const FilterPrice = (props) => {
-  const {
-    onSetMinPrice,
-    minPrice,
-    maxPrice,
-    onSetMaxPrice,
-    filterState,
-    sortState,
-    getProducts,
-  } = props;
+  const { onSetMinPrice, minPrice, maxPrice, onSetMaxPrice } = props;
   const defaultMinPrice = getMinPrice(CATALOG);
   const defaultMaxPrice = getMaxPrice(CATALOG);
 
   const minPriceRef = useRef();
   const maxPriceRef = useRef();
-
-  React.useEffect(() => {
-    getProducts({ filterState, sortState });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filterState, sortState]);
 
   const onInputPrice = (evt, callback) => {
     const price = Number(evt.target.value.split(" ").join(""));
@@ -119,16 +106,11 @@ FilterPrice.propTypes = {
   minPrice: NUMBER,
   maxPrice: NUMBER,
   onSetMaxPrice: FUNCTION,
-  filterState: FILTER_STATE,
-  sortState: SORT_STATE,
-  getProducts: FUNCTION,
 };
 
 const mapStateToProps = (state) => ({
   minPrice: state.FILTER_STATE.minPrice,
   maxPrice: state.FILTER_STATE.maxPrice,
-  filterState: state.FILTER_STATE,
-  sortState: state.SORT_STATE,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -137,9 +119,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onSetMaxPrice(value) {
     dispatch(ActionCreator.setMaxPrice(value));
-  },
-  getProducts(value) {
-    dispatch(ActionCreator.getProducts(value));
   },
 });
 

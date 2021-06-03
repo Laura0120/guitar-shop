@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import CartProductItem from "./cart-product-item";
-import { PROMO_CODE, GUITARS_DATA } from "../const";
+import { PromoCode, GUITARS_DATA } from "../const";
 import { addSpacesAfterThreeCharacters } from "../utils";
 import { NUMBER, PRODUCT_ITEM } from "../prop-type";
 
@@ -33,11 +33,15 @@ const CartSection = (props) => {
     const getDiscountByPromoCode = () => {
       switch (promoCode) {
         case "GITARAHIT":
-          return (totalSum / 100) * 10;
+          return (totalSum / 100) * PromoCode[promoCode].discountPercentage;
         case "SUPERGITARA":
-          return 700;
+          return PromoCode[promoCode].discountAmount;
         case "GITARA2020":
-          return (totalSum / 100) * 30 < 3500 ? (totalSum / 100) * 30 : 3500;
+          return (totalSum / 100) *
+            PromoCode[promoCode].maxPercentageOfTheOrder <
+            PromoCode[promoCode].discountAmount
+            ? (totalSum / 100) * PromoCode[promoCode].maxPercentageOfTheOrder
+            : PromoCode[promoCode].discountAmount;
         default:
           return null;
       }
@@ -83,7 +87,8 @@ const CartSection = (props) => {
               type="button"
               className="cart-footer__apply-promo-code button button--gray"
               onClick={() => {
-                PROMO_CODE.indexOf(promoCodeRef.current.value) !== -1
+                Object.keys(PromoCode).indexOf(promoCodeRef.current.value) !==
+                -1
                   ? applyValidPromoCode(promoCodeRef.current.value)
                   : applyInalidPromoCode(promoCodeRef.current.value);
               }}
