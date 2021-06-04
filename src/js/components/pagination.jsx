@@ -76,14 +76,18 @@ const Pagination = (props) => {
           ? getPages(visiblePages)
           : visiblePages.map(getPageElement)}
       </div>
-      <button
-        type="button"
-        onClick={onClickNextButton}
-        className="pagination__button"
-        disabled={pages.length === currentPage}
-      >
-        Далее
-      </button>
+      {currentPage < pages.length ? (
+        <button
+          type="button"
+          onClick={onClickNextButton}
+          className="pagination__button"
+          disabled={pages.length === currentPage}
+        >
+          Далее
+        </button>
+      ) : (
+        ``
+      )}
     </section>
   );
 };

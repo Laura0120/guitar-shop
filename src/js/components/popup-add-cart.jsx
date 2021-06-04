@@ -8,6 +8,13 @@ import PopupContent from "./popup-content";
 const PopupAddCart = (props) => {
   const { productItem, closePopupAddCart, addToCart } = props;
 
+  const onClosePopup = () => {
+    enablePageScrolling();
+    document.removeEventListener("click", onOverlayClick);
+    document.removeEventListener("keydown", onEcsDown);
+    closePopupAddCart();
+  };
+
   const onOverlayClick = (evt) => {
     if (
       !evt.target.closest(".popup-wrapper") &&
@@ -24,17 +31,10 @@ const PopupAddCart = (props) => {
     }
   };
 
-  const onClosePopup = () => {
-    enablePageScrolling();
-    document.removeEventListener("click", onOverlayClick);
-    document.removeEventListener("keydown", onEcsDown);
-    closePopupAddCart();
-  };
-
   useEffect(() => {
     disablePageScrolling();
     document.addEventListener("click", onOverlayClick);
-    window.addEventListener("keydown", onEcsDown);
+    document.addEventListener("keydown", onEcsDown);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (

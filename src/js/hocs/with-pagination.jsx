@@ -16,13 +16,9 @@ const withPagination = (Component) => {
       const pageCount = Math.ceil(
         productList.length / PaginationData.COUNT_CARDS_ON_PAGES
       );
-      const pageCountArray = new Array(pageCount)
-        .join()
-        .split(",")
-        .map(function (item, index) {
-          return ++index;
-        });
+      const pageCountArray = [...Array(pageCount + 1).keys()].slice(1);
       setPages(pageCountArray);
+      setCurrentPage(1);
     }, [productList]);
 
     useEffect(() => {
