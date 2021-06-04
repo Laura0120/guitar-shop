@@ -2,18 +2,24 @@ export const AppRoute = {
   CATALOG: { url: "/", name: "Каталог" },
   CART: { url: "/cart", name: "Оформляем" },
 };
-export const PromoCode = {
-  GITARAHIT: {
+export const PromoCodeNames = {
+  GITARAHIT: "GITARAHIT",
+  SUPERGITARA: "SUPERGITARA",
+  GITARA2020: "GITARA2020",
+};
+
+export const PromoCodesInfo = {
+  [PromoCodeNames.GITARAHIT]: {
     discountPercentage: 10,
     maxPercentageOfTheOrder: null,
     discountAmount: null,
   },
-  SUPERGITARA: {
+  [PromoCodeNames.SUPERGITARA]: {
     discountPercentage: null,
     maxPercentageOfTheOrder: null,
     discountAmount: 700,
   },
-  GITARA2020: {
+  [PromoCodeNames.GITARA2020]: {
     discountPercentage: null,
     maxPercentageOfTheOrder: 30,
     discountAmount: 3500,

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import CartProductItem from "./cart-product-item";
-import { PromoCode, GUITARS_DATA } from "../const";
+import { PromoCodesInfo, PromoCodeNames, GUITARS_DATA } from "../const";
 import { addSpacesAfterThreeCharacters } from "../utils";
 import { NUMBER, PRODUCT_ITEM } from "../prop-type";
 
@@ -29,28 +29,37 @@ const CartSection = (props) => {
     return;
   };
 
-  useEffect(() => {
-    const getDiscountByPromoCode = () => {
-      switch (promoCode) {
-        case "GITARAHIT":
-          return (totalSum / 100) * PromoCode[promoCode].discountPercentage;
-        case "SUPERGITARA":
-          return PromoCode[promoCode].discountAmount;
-        case "GITARA2020":
-          return (totalSum / 100) *
-            PromoCode[promoCode].maxPercentageOfTheOrder <
-            PromoCode[promoCode].discountAmount
-            ? (totalSum / 100) * PromoCode[promoCode].maxPercentageOfTheOrder
-            : PromoCode[promoCode].discountAmount;
-        default:
-          return null;
+  const getDiscountByPromoCode = (promoCode) => {
+    const promoCodeInfo = PromoCodesInfo[promoCode];
+
+    switch (promoCode) {
+      case PromoCodeNames.GITARAHIT: {
+        return (totalSum / 100) * promoCodeInfo.discountPercentage;
       }
-    };
+      case PromoCodeNames.SUPERGITARA: {
+        return promoCodeInfo.discountAmount;
+      }
+      case PromoCodeNames.GITARA2020: {
+        return (totalSum / 100) * promoCodeInfo.maxPercentageOfTheOrder <
+          promoCodeInfo.discountAmount
+          ? (totalSum / 100) * promoCodeInfo.maxPercentageOfTheOrder
+          : promoCodeInfo.discountAmount;
+      }
+      default: {
+        return null;
+      }
+    }
+  };
+
+  useEffect(() => {
     const totalSum = itemsInTheCart.reduce(
       (totalSum, item) => totalSum + item.product.price * item.count,
       0
     );
-    setTotalSum(Math.round(totalSum - getDiscountByPromoCode()));
+
+    const discountByPromoCode = getDiscountByPromoCode(promoCode);
+    setTotalSum(Math.round(totalSum - discountByPromoCode));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [itemsInTheCart, promoCode]);
 
   return (
@@ -87,8 +96,9 @@ const CartSection = (props) => {
               type="button"
               className="cart-footer__apply-promo-code button button--gray"
               onClick={() => {
-                Object.keys(PromoCode).indexOf(promoCodeRef.current.value) !==
-                -1
+                Object.keys(PromoCodesInfo).indexOf(
+                  promoCodeRef.current.value
+                ) !== -1
                   ? applyValidPromoCode(promoCodeRef.current.value)
                   : applyInalidPromoCode(promoCodeRef.current.value);
               }}
