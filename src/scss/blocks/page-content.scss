@@ -51,6 +51,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   width: $desktop-width;
+  // width: 1006px;
   margin: 0 auto;
   padding: 213px $desktop-padding 139px;
 
@@ -69,8 +70,7 @@
   width: 100%;
 }
 
-.page-content__catalog,
-.page-content__sort {
+.page-content__catalog {
   width: 700px;
 }
 

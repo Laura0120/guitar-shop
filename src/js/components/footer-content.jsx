@@ -15,21 +15,41 @@ const FoooterContent = () => {
       <div className="page-footer__content-item">
         <h3>Каталог</h3>
         <ul>
-          <li>Акустические гитары</li>
-          <li>Классические гитары</li>
-          <li>Электрогитары</li>
-          <li>Бас-гитары</li>
-          <li>Укулеле</li>
+          <li>
+            <a href="#acousticGuitars">Акустические гитары</a>
+          </li>
+          <li>
+            <a href="#classicGuitars">Классические гитары</a>
+          </li>
+          <li>
+            <a href="#electricGuitars">Электрогитары</a>
+          </li>
+          <li>
+            <a href="#bassGuitars">Бас-гитары</a>
+          </li>
+          <li>
+            <a href="#ukulele">Укулеле</a>
+          </li>
         </ul>
       </div>
       <div className="page-footer__content-item">
         <h3>Информация</h3>
         <ul>
-          <li>Где купить?</li>
-          <li>Блог</li>
-          <li>Вопрос - ответ</li>
-          <li>Возврат</li>
-          <li>Сервис-центры</li>
+          <li>
+            <a href="#whereCanOneBuy?">Где купить?</a>
+          </li>
+          <li>
+            <a href="#blog">Блог</a>
+          </li>
+          <li>
+            <a href="#questionAnswer">Вопрос - ответ</a>
+          </li>
+          <li>
+            <a href="#purchaseReturns">Возврат</a>
+          </li>
+          <li>
+            <a href="#serviceCenters">Сервис-центры</a>
+          </li>
         </ul>
       </div>
       <div className="page-footer__content-item">
@@ -52,7 +72,6 @@ const FoooterContent = () => {
           без выходных.
         </p>
       </div>
-      <div></div>
     </section>
   );
 };

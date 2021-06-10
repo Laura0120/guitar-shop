@@ -9,8 +9,8 @@
 .page-footer__wrapper {
   display: flex;
   justify-content: space-between;
-
   width: $desktop-width;
+  // width: 1006px;
   margin: 0 auto;
   padding: 60px $desktop-padding;
 }
@@ -63,6 +63,7 @@
   text-decoration: none;
   @include font(10px, 13px, 500, white);
 }
+
 .page-footer__operating-mode,
 .page-footer__tel {
   padding-left: 12px;
