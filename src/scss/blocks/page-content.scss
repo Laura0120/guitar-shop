@@ -51,9 +51,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   width: $desktop-width;
-  // width: 1006px;
   margin: 0 auto;
-  padding: 213px $desktop-padding 139px;
+  padding: 213px 44px 139px $desktop-padding;
 
   &--cart {
     padding-top: 238px;

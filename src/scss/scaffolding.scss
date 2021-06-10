@@ -49,3 +49,9 @@ input[type="radio"].visually-hidden {
   flex-direction: column;
   min-height: 100vh;
 }
+
+@media (min-width: $desktop-width) {
+  body {
+    overflow-x: hidden;
+  }
+}

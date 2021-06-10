@@ -10,7 +10,6 @@
   display: flex;
   justify-content: space-between;
   width: $desktop-width;
-  // width: 1006px;
   margin: 0 auto;
   padding: 60px $desktop-padding;
 }
@@ -69,6 +68,7 @@
   padding-left: 12px;
   position: relative;
   display: block;
+
   &::before {
     content: "";
     position: absolute;
